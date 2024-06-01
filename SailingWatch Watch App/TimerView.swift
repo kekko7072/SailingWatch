@@ -49,7 +49,7 @@ struct TimerView: View {
                         timerModel.start()
                         isStarted = true
                     }) {
-                        Text("START").foregroundStyle(.black).bold()
+                        Text("START").font(.title2).foregroundStyle(.black).bold()
                     }.buttonStyle(.borderedProminent).tint(.green)
                     
                 }
@@ -64,13 +64,6 @@ struct TimerView: View {
                             Image(systemName: "heart")
                         }
                     }
-                    /*ToolbarItem(placement: .topBarTrailing) {
-                     Button {
-                     // Perform an action here.
-                     } label: {
-                     Image(systemName:"suit.club")
-                     }
-                     }*/
                     if timerModel.isCountingDown {
                         ToolbarItemGroup(placement: .bottomBar) {
                             

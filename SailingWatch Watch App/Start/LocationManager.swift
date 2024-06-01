@@ -113,7 +113,7 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
         let dx = userPoint.x - xx
         let dy = userPoint.y - yy
         
-        return sqrt(dx * dx + dy * dy) / 1000 // distance in meters
+        return sqrt(dx * dx + dy * dy)
     }
 
     // MARK: - CLLocationManagerDelegate Methods

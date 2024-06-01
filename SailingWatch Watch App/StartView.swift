@@ -50,7 +50,7 @@ struct StartView: View {
                         }.foregroundStyle(.white).tint(.green)
                     }
                     Spacer()
-                }.foregroundStyle(.black).bold().onAppear {
+                }.font(.title2).foregroundStyle(.black).bold().onAppear {
                     locationManager.requestAuthorization()
                 }.onReceive(locationManager.$liveLocation, perform: { _ in
                     print(locationManager.liveLocation ?? "")
