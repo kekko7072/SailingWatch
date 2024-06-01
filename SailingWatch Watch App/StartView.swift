@@ -63,10 +63,16 @@ struct StartView: View {
                         .cornerRadius(10).disabled(true)
                 }.toolbar {
                     if let speed = locationManager.liveLocation?.speed {
-                    ToolbarItemGroup(placement: .topBarLeading) {
-                        Text("\(speed, specifier: "%.0f") m/s").padding().background(.purple).cornerRadius(10)
+                        ToolbarItem(placement: .topBarLeading) {
+                            Text("\(speed, specifier: "%.2f") m/s").padding().background(.purple).cornerRadius(10)
                         }
                     }
+                        ToolbarItem(placement: .topBarTrailing) {
+                            Text("\(locationManager.calculateDistanceFromLine(), specifier: "%.2f") m").padding().background(.teal).cornerRadius(10)
+                        }
+                    
+                    
+                    
                     ToolbarItemGroup(placement: .bottomBar) {
                         Button {
                             locationManager.pointALocation = locationManager.getCurrentLocation()

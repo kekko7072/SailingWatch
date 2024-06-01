@@ -8,6 +8,7 @@
 import Foundation
 import CoreLocation
 import Combine
+import MapKit
 
 class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
 
@@ -19,7 +20,6 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
 
     override init() {
         super.init()
-        print("INITIALIZED")
         configureLocationManager()
         requestAuthorization()
     }
@@ -72,6 +72,48 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
         }
 
         return locationManager.location
+    }
+    
+    /// Calculate user distance from line
+    func calculateDistanceFromLine() -> CLLocationDistance {
+        guard let pointA = pointALocation, let pointB = pointBLocation,  let userLocation = liveLocation else {
+            return 0.0
+        }
+        
+        let lineStart = pointA.coordinate
+        let lineEnd = pointB.coordinate
+        
+        let userPoint = MKMapPoint(userLocation.coordinate)
+        let start = MKMapPoint(lineStart)
+        let end = MKMapPoint(lineEnd)
+        
+        let a = userPoint.x - start.x
+        let b = userPoint.y - start.y
+        let c = end.x - start.x
+        let d = end.y - start.y
+        
+        let dot = a * c + b * d
+        let lenSq = c * c + d * d
+        let param = (lenSq != 0) ? (dot / lenSq) : -1
+        
+        let xx: Double
+        let yy: Double
+        
+        if param < 0 {
+            xx = start.x
+            yy = start.y
+        } else if param > 1 {
+            xx = end.x
+            yy = end.y
+        } else {
+            xx = start.x + param * c
+            yy = start.y + param * d
+        }
+        
+        let dx = userPoint.x - xx
+        let dy = userPoint.y - yy
+        
+        return sqrt(dx * dx + dy * dy) / 1000 // distance in meters
     }
 
     // MARK: - CLLocationManagerDelegate Methods

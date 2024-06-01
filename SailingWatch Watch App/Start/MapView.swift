@@ -7,7 +7,6 @@
 
 import SwiftUI
 import MapKit
-import CoreLocation
 
 let defaultCoordinate = CLLocationCoordinate2D(latitude: 42.22, longitude: 12.21)
 
@@ -15,29 +14,46 @@ struct MapView: View {
     @StateObject var userLocation = LocationManager()
     
     var body: some View {
-        Map(
-            coordinateRegion: .constant(MKCoordinateRegion(
-                center: userLocation.liveLocation?.coordinate ?? defaultCoordinate,
-                latitudinalMeters: 250,
-                longitudinalMeters: 250)
-            ),
-            showsUserLocation: true,
-            userTrackingMode: .constant(.follow),
-            annotationItems: annotations
-        ) { annotation in
-            MapMarker(coordinate: annotation.coordinate, tint: annotation.tint)
+        VStack {
+            Map {
+                MapPolyline(coordinates: coordinates).stroke(.green, lineWidth: 8)
+                
+                ForEach(annotations) { annotation in
+                    MapCircle(center: annotation.coordinate, radius: CLLocationDistance(8))
+                        .foregroundStyle(annotation.tint)
+                        .mapOverlayLevel(level: .aboveLabels)
+                }
+                
+                if let live = userLocation.liveLocation?.coordinate {
+                    MapCircle(center: live, radius: 10)
+                        .foregroundStyle(.yellow)
+                        .mapOverlayLevel(level: .aboveLabels)
+                }
+            }
+            .edgesIgnoringSafeArea(.all)
         }
     }
     
     private var annotations: [PointAnnotation] {
         var points = [PointAnnotation]()
         if let pointA = userLocation.pointALocation {
-            points.append(PointAnnotation(coordinate: pointA.coordinate, tint: .blue, title: "Point A"))
+            points.append(PointAnnotation(coordinate: pointA.coordinate, tint: .blue, title: "A"))
         }
         if let pointB = userLocation.pointBLocation {
-            points.append(PointAnnotation(coordinate: pointB.coordinate, tint: .blue, title: "Point B"))
+            points.append(PointAnnotation(coordinate: pointB.coordinate, tint: .red, title: "B"))
         }
         return points
+    }
+    
+    private var coordinates: [CLLocationCoordinate2D] {
+        var coordinates = [CLLocationCoordinate2D]()
+        if let pointA = userLocation.pointALocation {
+            coordinates.append(pointA.coordinate)
+        }
+        if let pointB = userLocation.pointBLocation {
+            coordinates.append(pointB.coordinate)
+        }
+        return coordinates
     }
 }
 

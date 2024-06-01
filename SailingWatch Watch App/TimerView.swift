@@ -20,7 +20,7 @@ struct TimerView: View {
             VStack {
                 if isStarted || timerModel.isPaused  {
                     Text(timerModel.displayTime.0)
-                        .font(timerModel.displayTime.1)
+                        .font(timerModel.displayTime.1).bold()
                         .padding()
                     if(!timerModel.isCountingDown){
                         
