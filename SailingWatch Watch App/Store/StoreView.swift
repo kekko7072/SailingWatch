@@ -1,0 +1,91 @@
+//
+//  StoreView.swift
+//  SailingWatch Watch App
+//
+//  Created by Francesco Vezzani on 01/06/24.
+//
+
+import SwiftUI
+
+struct StoreView: View {
+    @Environment(\.dismiss) var dismiss
+
+    @State var storeManager: StoreManager
+    @State var dismissible: Bool
+    
+    init(storeManager: StoreManager, _ dismissible: Bool = false) {
+        self.storeManager = storeManager
+        self.dismissible = dismissible
+    }
+    
+    var body: some View {
+        ScrollView {
+            Text("Line Tracking")
+                .bold()
+            if storeManager.products.isEmpty {
+                ProgressView().padding()
+            }else{
+                ForEach(storeManager.products.filter({ product in
+                    product.type == .autoRenewable
+                }), id: \.id) { product in
+                    Button {
+                        Task {
+                            try await storeManager.purchase(product)
+                        }
+                    } label: {
+                        VStack {
+                            Text(verbatim: product.displayName)
+                                .font(.headline)
+                            HStack{
+                                Text(verbatim: product.description)
+                                Text(verbatim: product.displayPrice)
+                            }
+                        }
+                    }
+                    .buttonStyle(.borderedProminent)
+                }
+                Spacer()
+                Text("One time")
+                ForEach(storeManager.products.filter({ product in
+                    product.type == .nonConsumable
+                }), id: \.id) { product in
+                    Button {
+                        Task {
+                            try await storeManager.purchase(product)
+                        }
+                    } label: {
+                        VStack {
+                            Text(verbatim: product.displayName)
+                                .font(.headline)
+                            HStack{
+                                Text(verbatim: product.description)
+                                Text(verbatim: product.displayPrice)
+                            }
+                        }
+                    }
+                    .buttonStyle(.borderedProminent)
+                }
+                Button(action: {
+                    Task {
+                        print(storeManager.activeTransactions.count)
+                        //TODO
+                        //await storeManager.restorePurchases()
+                    }
+                }) {
+                    Text("Restore Purchases")
+                }
+            }
+            if(dismissible){
+                Button("Dismiss") {
+                    dismiss()
+                }
+            }
+        }.navigationBarHidden(true).task {
+           await storeManager.fetchProducts()
+        }
+    }
+}
+
+#Preview {
+    StoreView(storeManager: StoreManager())
+}

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct GPSView: View {
+struct StartView: View {
     @StateObject var locationManager = LocationManager()
     
     @State var settedLine = false
@@ -98,5 +98,5 @@ struct GPSView: View {
 }
 
 #Preview {
-    GPSView().environmentObject(LocationManager())
+    StartView().environmentObject(LocationManager())
 }

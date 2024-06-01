@@ -7,10 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF60D3B52C0B8371001834E6 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF60D3B42C0B8371001834E6 /* StoreKit.framework */; };
+		BF60D3B72C0B8F4C001834E6 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF60D3B62C0B8F4C001834E6 /* MainView.swift */; };
 		BF65BF552C08C37900FA9193 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF65BF542C08C37900FA9193 /* TimerView.swift */; };
 		BF65BF572C08C39400FA9193 /* TimerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF65BF562C08C39400FA9193 /* TimerModel.swift */; };
 		BF65BF5A2C08CBB300FA9193 /* count.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BF65BF592C08CBB000FA9193 /* count.mp3 */; };
 		BF65BF5C2C08CBB900FA9193 /* start.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BF65BF5B2C08CBB600FA9193 /* start.mp3 */; };
+		BF7664F82C0B6C09008A0B1A /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7664F72C0B6C09008A0B1A /* StoreManager.swift */; };
+		BF7664FB2C0B6C61008A0B1A /* ProductIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7664FA2C0B6C61008A0B1A /* ProductIdentifiers.swift */; };
+		BF7664FD2C0B6D61008A0B1A /* SailingWatch.storekit in Resources */ = {isa = PBXBuildFile; fileRef = BF7664FC2C0B6D61008A0B1A /* SailingWatch.storekit */; };
+		BF7664FF2C0B6E82008A0B1A /* StoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7664FE2C0B6E82008A0B1A /* StoreView.swift */; };
 		BFC9345D2C0AFF1B0081C025 /* SoundInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC9345C2C0AFF1B0081C025 /* SoundInterval.swift */; };
 		BFC9345F2C0B020A0081C025 /* CountdownTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC9345E2C0B020A0081C025 /* CountdownTime.swift */; };
 		BFD9477A2AED4B5400BCA3ED /* SailingWatch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = BFD947792AED4B5400BCA3ED /* SailingWatch Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -18,7 +24,7 @@
 		BFD947832AED4B5500BCA3ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFD947822AED4B5500BCA3ED /* Assets.xcassets */; };
 		BFD947B62AED4D5700BCA3ED /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD947B12AED4D5700BCA3ED /* LocationManager.swift */; };
 		BFD947BF2AED4DAE00BCA3ED /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD947BA2AED4DAE00BCA3ED /* MapView.swift */; };
-		BFD947C12AED4DAE00BCA3ED /* GPSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD947BC2AED4DAE00BCA3ED /* GPSView.swift */; };
+		BFD947C12AED4DAE00BCA3ED /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD947BC2AED4DAE00BCA3ED /* StartView.swift */; };
 		BFD947C62AED4EA100BCA3ED /* Preview Content in Resources */ = {isa = PBXBuildFile; fileRef = BFD947C52AED4EA100BCA3ED /* Preview Content */; };
 /* End PBXBuildFile section */
 
@@ -47,11 +53,17 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		BF60D3B42C0B8371001834E6 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS10.5.sdk/System/Library/Frameworks/StoreKit.framework; sourceTree = DEVELOPER_DIR; };
+		BF60D3B62C0B8F4C001834E6 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		BF65BF542C08C37900FA9193 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		BF65BF562C08C39400FA9193 /* TimerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerModel.swift; sourceTree = "<group>"; };
 		BF65BF582C08C91C00FA9193 /* SailingWatch Watch App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "SailingWatch Watch App.entitlements"; sourceTree = "<group>"; };
 		BF65BF592C08CBB000FA9193 /* count.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = count.mp3; sourceTree = "<group>"; };
 		BF65BF5B2C08CBB600FA9193 /* start.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = start.mp3; sourceTree = "<group>"; };
+		BF7664F72C0B6C09008A0B1A /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
+		BF7664FA2C0B6C61008A0B1A /* ProductIdentifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductIdentifiers.swift; sourceTree = "<group>"; };
+		BF7664FC2C0B6D61008A0B1A /* SailingWatch.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = SailingWatch.storekit; sourceTree = "<group>"; };
+		BF7664FE2C0B6E82008A0B1A /* StoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreView.swift; sourceTree = "<group>"; };
 		BFC9345C2C0AFF1B0081C025 /* SoundInterval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundInterval.swift; sourceTree = "<group>"; };
 		BFC9345E2C0B020A0081C025 /* CountdownTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownTime.swift; sourceTree = "<group>"; };
 		BFD947732AED4B5400BCA3ED /* SailingWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SailingWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -61,7 +73,7 @@
 		BFD947A62AED4CC200BCA3ED /* SailingWatch-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "SailingWatch-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
 		BFD947B12AED4D5700BCA3ED /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		BFD947BA2AED4DAE00BCA3ED /* MapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
-		BFD947BC2AED4DAE00BCA3ED /* GPSView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GPSView.swift; sourceTree = "<group>"; };
+		BFD947BC2AED4DAE00BCA3ED /* StartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		BFD947C52AED4EA100BCA3ED /* Preview Content */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Preview Content"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -70,17 +82,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF60D3B52C0B8371001834E6 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BF60D3B32C0B8371001834E6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BF60D3B42C0B8371001834E6 /* StoreKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BF7664F92C0B6C10008A0B1A /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				BF7664FE2C0B6E82008A0B1A /* StoreView.swift */,
+				BF7664F72C0B6C09008A0B1A /* StoreManager.swift */,
+				BF7664FA2C0B6C61008A0B1A /* ProductIdentifiers.swift */,
+				BF7664FC2C0B6D61008A0B1A /* SailingWatch.storekit */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
 		BFD9476C2AED4B5400BCA3ED = {
 			isa = PBXGroup;
 			children = (
 				BFD9477D2AED4B5400BCA3ED /* SailingWatch Watch App */,
 				BFD947742AED4B5400BCA3ED /* Products */,
+				BF60D3B32C0B8371001834E6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,10 +131,12 @@
 			children = (
 				BF65BF582C08C91C00FA9193 /* SailingWatch Watch App.entitlements */,
 				BFD9477E2AED4B5400BCA3ED /* SailingWatchApp.swift */,
+				BF60D3B62C0B8F4C001834E6 /* MainView.swift */,
 				BF65BF542C08C37900FA9193 /* TimerView.swift */,
-				BFD947BC2AED4DAE00BCA3ED /* GPSView.swift */,
+				BFD947BC2AED4DAE00BCA3ED /* StartView.swift */,
 				BFD947C42AED4DF200BCA3ED /* Timer */,
-				BFD947B82AED4D9F00BCA3ED /* GPS */,
+				BFD947B82AED4D9F00BCA3ED /* Start */,
+				BF7664F92C0B6C10008A0B1A /* Store */,
 				BFD947A62AED4CC200BCA3ED /* SailingWatch-Watch-App-Info.plist */,
 				BFD947822AED4B5500BCA3ED /* Assets.xcassets */,
 				BF65BF592C08CBB000FA9193 /* count.mp3 */,
@@ -111,13 +146,13 @@
 			path = "SailingWatch Watch App";
 			sourceTree = "<group>";
 		};
-		BFD947B82AED4D9F00BCA3ED /* GPS */ = {
+		BFD947B82AED4D9F00BCA3ED /* Start */ = {
 			isa = PBXGroup;
 			children = (
 				BFD947B12AED4D5700BCA3ED /* LocationManager.swift */,
 				BFD947BA2AED4DAE00BCA3ED /* MapView.swift */,
 			);
-			path = GPS;
+			path = Start;
 			sourceTree = "<group>";
 		};
 		BFD947C42AED4DF200BCA3ED /* Timer */ = {
@@ -219,6 +254,7 @@
 			files = (
 				BF65BF5A2C08CBB300FA9193 /* count.mp3 in Resources */,
 				BF65BF5C2C08CBB900FA9193 /* start.mp3 in Resources */,
+				BF7664FD2C0B6D61008A0B1A /* SailingWatch.storekit in Resources */,
 				BFD947C62AED4EA100BCA3ED /* Preview Content in Resources */,
 				BFD947832AED4B5500BCA3ED /* Assets.xcassets in Resources */,
 			);
@@ -231,12 +267,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BFD947C12AED4DAE00BCA3ED /* GPSView.swift in Sources */,
+				BFD947C12AED4DAE00BCA3ED /* StartView.swift in Sources */,
+				BF60D3B72C0B8F4C001834E6 /* MainView.swift in Sources */,
 				BFD947B62AED4D5700BCA3ED /* LocationManager.swift in Sources */,
+				BF7664FF2C0B6E82008A0B1A /* StoreView.swift in Sources */,
 				BF65BF552C08C37900FA9193 /* TimerView.swift in Sources */,
 				BFC9345D2C0AFF1B0081C025 /* SoundInterval.swift in Sources */,
+				BF7664FB2C0B6C61008A0B1A /* ProductIdentifiers.swift in Sources */,
 				BF65BF572C08C39400FA9193 /* TimerModel.swift in Sources */,
 				BFD947BF2AED4DAE00BCA3ED /* MapView.swift in Sources */,
+				BF7664F82C0B6C09008A0B1A /* StoreManager.swift in Sources */,
 				BFC9345F2C0B020A0081C025 /* CountdownTime.swift in Sources */,
 				BFD9477F2AED4B5400BCA3ED /* SailingWatchApp.swift in Sources */,
 			);

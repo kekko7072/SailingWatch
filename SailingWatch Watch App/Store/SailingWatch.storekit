@@ -1,0 +1,144 @@
+{
+  "identifier" : "E25CAB56",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+    {
+      "displayPrice" : "24.99",
+      "familyShareable" : true,
+      "internalID" : "6503645427",
+      "localizations" : [
+        {
+          "description" : "Precision for sailing races and training",
+          "displayName" : "SailingWatch Ultimate",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "00",
+      "referenceName" : "SailingWatch Ultimate",
+      "type" : "NonConsumable"
+    }
+  ],
+  "settings" : {
+    "_applicationInternalID" : "6465700002",
+    "_billingGracePeriodEnabled" : false,
+    "_developerTeamID" : "P8WULW25UZ",
+    "_failTransactionsEnabled" : false,
+    "_lastSynchronizedDate" : 738953472.90404701,
+    "_locale" : "en_US",
+    "_storefront" : "ITA",
+    "_storeKitErrors" : [
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Load Products"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Purchase"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Verification"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "App Store Sync"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Subscription Status"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "App Transaction"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Manage Subscriptions Sheet"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Refund Request Sheet"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Offer Code Redeem Sheet"
+      }
+    ]
+  },
+  "subscriptionGroups" : [
+    {
+      "id" : "21495133",
+      "localizations" : [
+
+      ],
+      "name" : "Sailor",
+      "subscriptions" : [
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "6.99",
+          "familyShareable" : true,
+          "groupNumber" : 2,
+          "internalID" : "6503645681",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Precision for sailing races and training",
+              "displayName" : "SailingWatch Plus",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "02",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : "SailingWatch Plus",
+          "subscriptionGroupID" : "21495133",
+          "type" : "RecurringSubscription"
+        },
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "9.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "6503645277",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Precision for sailing races and training",
+              "displayName" : "SailingWatch Pro",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "01",
+          "recurringSubscriptionPeriod" : "P1Y",
+          "referenceName" : "SailingWatch Pro",
+          "subscriptionGroupID" : "21495133",
+          "type" : "RecurringSubscription"
+        }
+      ]
+    }
+  ],
+  "version" : {
+    "major" : 3,
+    "minor" : 0
+  }
+}
