@@ -12,8 +12,8 @@ struct ContentView: View {
         NavigationStack {
             VStack {
                 if isStarted || timerModel.isPaused  {
-                    Text(timerModel.displayTime)
-                        .font(.largeTitle)
+                    Text(timerModel.displayTime.0)
+                        .font(timerModel.displayTime.1)
                         .padding()
                 }else{
                     Picker(selection: $selectedDuration, label: EmptyView()) {
@@ -23,6 +23,7 @@ struct ContentView: View {
                     }
                     .onChange(of: selectedDuration) { oldValue, newValue in
                         timerModel.countdownDuration = newValue.rawValue
+                        timerModel.displayTime = timerModel.formatTime(newValue.rawValue)
                     }
                     .padding().padding(.bottom, 10)
                 }

@@ -1,10 +1,11 @@
 import Foundation
+import SwiftUI
 import HealthKit
 import AVFoundation
 import WatchKit
 
 class TimerModel: NSObject, ObservableObject, HKWorkoutSessionDelegate, HKLiveWorkoutBuilderDelegate {
-    @Published var displayTime: String = "00:00:00"
+    @Published var displayTime: (String, Font) = ("00:00:00", .largeTitle)
     @Published var isPaused: Bool = false
     @Published var countdownDuration: TimeInterval = CountdownTime.fiveMinutes.rawValue
     @Published var heartRate: Double = 0.0
@@ -21,6 +22,8 @@ class TimerModel: NSObject, ObservableObject, HKWorkoutSessionDelegate, HKLiveWo
     override init() {
         super.init()
         configureAudioSession()
+        /// Initialise display time with the initial value of countdownDuration
+        self.displayTime = self.formatTime(countdownDuration)
     }
     
     func requestAuthorization() {
@@ -147,11 +150,17 @@ class TimerModel: NSObject, ObservableObject, HKWorkoutSessionDelegate, HKLiveWo
         workoutSession?.end()
     }
     
-    private func formatTime(_ time: TimeInterval) -> String {
+    /// Public to make changable the initial value also on CounterView
+    func formatTime(_ time: TimeInterval) -> (String, Font) {
         let hours = Int(time) / 3600
         let minutes = (Int(time) % 3600) / 60
         let seconds = Int(time) % 60
-        return String(format: "%02d:%02d:%02d", hours, minutes, seconds)
+        
+        if hours > 0 {
+            return (String(format: "%02d:%02d:%02d", hours, minutes, seconds), .largeTitle)
+        }else{
+            return (String(format: "%02d:%02d", minutes, seconds),.system(size: 60))
+        }
     }
     
     private func configureAudioSession() {
@@ -180,7 +189,6 @@ class TimerModel: NSObject, ObservableObject, HKWorkoutSessionDelegate, HKLiveWo
     }
     
     private func checkFeedback(for remainingTime: TimeInterval) {
-        print("\(Int(remainingTime))")
         if let interval = soundIntervals.first(where: { $0.time == Int(remainingTime) }) {
             switch interval.feedback {
             case .audio(let audioType):
