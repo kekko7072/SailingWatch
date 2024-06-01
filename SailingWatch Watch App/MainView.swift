@@ -8,25 +8,46 @@
 import SwiftUI
 
 struct MainView: View {
-    @ObservedObject var storeManager: StoreManager
-    @State var dismissPurchase: Bool
+    @AppStorage("firstOpeningTimestamp") var firstOpeningTimestamp: Double?
     
-    init(storeManager: StoreManager,_ dismissPurchase: Bool = false) {
-        self.storeManager = storeManager
-        self.dismissPurchase = storeManager.activeTransactions.isEmpty
-    }
+    @ObservedObject var storeManager: StoreManager
+    @State private var showAlert = false
     
     var body: some View {
         TabView {
             TimerView()
-            if !storeManager.activeTransactions.isEmpty {
+            if !storeManager.activeTransactions.isEmpty{
                 StartView()
             } else {
                 StoreView(storeManager: storeManager)
             }
         }
-        .tabViewStyle(PageTabViewStyle()).sheet(isPresented: $dismissPurchase) {
-            StoreView(storeManager: storeManager, dismissPurchase)
+        .tabViewStyle(PageTabViewStyle()).onAppear(perform: checkForAlert).alert(isPresented: $showAlert) {
+            Alert(
+                title: Text("Free Trial"),
+                message: Text("The Line Tracking Feature of the app is free for the first three weeks."),
+                dismissButton: .default(Text("OK"))
+            )
+        }
+    }
+    
+    private func checkForAlert() {
+        guard let firstTimestamp = firstOpeningTimestamp else { return }
+        
+        if(!storeManager.activeTransactions.isEmpty){
+            showAlert = false
+        }else{
+            
+            let firstDate = Date(timeIntervalSince1970: firstTimestamp)
+            let currentDate = Date()
+            let calendar = Calendar.current
+            let components = calendar.dateComponents([.weekOfYear], from: firstDate, to: currentDate)
+            
+            if let weeks = components.weekOfYear {
+                if weeks >= 0 && weeks < 3 {
+                    showAlert = true
+                }
+            }
         }
     }
 }

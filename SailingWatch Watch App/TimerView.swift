@@ -36,7 +36,7 @@ struct TimerView: View {
                     Picker(selection: $selectedDuration, label: EmptyView()) {
                         ForEach(CountdownTime.allCases, id: \.self) { duration in
                             let isSelected = selectedDuration == duration
-                            Text(duration.displayString).font(isSelected ? .largeTitle : .title2).tag(duration).foregroundStyle(isSelected ? .green : .white)
+                            Text(duration.displayString).font(isSelected ? .largeTitle : .title2).tag(duration).foregroundStyle(isSelected ? .green : .white).fontWeight(isSelected ? .bold :.regular)
                         }
                     }
                     .onChange(of: selectedDuration) { oldValue, newValue in

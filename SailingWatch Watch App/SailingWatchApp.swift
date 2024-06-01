@@ -12,6 +12,14 @@ import WatchKit
 struct SailingWatch_Watch_AppApp: App {
     @WKApplicationDelegateAdaptor(AppDelegate.self) var delegate
     
+    @AppStorage("firstOpeningTimestamp") var firstOpeningTimestamp: Double?
+    
+    init() {
+        if firstOpeningTimestamp == nil {
+            firstOpeningTimestamp = Date().timeIntervalSince1970
+        }
+    }
+    
     @StateObject var storeManager = StoreManager()
     
     var body: some Scene {

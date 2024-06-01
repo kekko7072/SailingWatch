@@ -23,11 +23,11 @@ struct StartView: View {
                         if locationManager.pointALocation != nil {
                             Button("A"){
                                 locationManager.pointALocation = locationManager.getCurrentLocation()
-                            }.buttonStyle(.borderedProminent).tint(.blue)
+                            }.buttonStyle(.borderedProminent).tint(.orange)
                         } else {
                             Button("A"){
                                 locationManager.pointALocation = locationManager.getCurrentLocation()
-                            }.foregroundStyle(.white).tint(.blue)
+                            }.foregroundStyle(.white).tint(.orange)
                         }
                         if locationManager.pointBLocation != nil {
                             Button("B"){
@@ -64,11 +64,11 @@ struct StartView: View {
                 }.toolbar {
                     if let speed = locationManager.liveLocation?.speed {
                         ToolbarItem(placement: .topBarLeading) {
-                            Text("\(speed, specifier: "%.2f") m/s").padding().background(.purple).cornerRadius(10)
+                            Text("\(speed, specifier: "%.2f") m/s").padding().background(.teal).cornerRadius(10)
                         }
                     }
                         ToolbarItem(placement: .topBarTrailing) {
-                            Text("\(locationManager.calculateDistanceFromLine(), specifier: "%.2f") m").padding().background(.teal).cornerRadius(10)
+                            Text("\(locationManager.calculateDistanceFromLine(), specifier: "%.2f") m").foregroundStyle(.black).padding().background(.yellow).cornerRadius(10)
                         }
                     
                     
@@ -78,7 +78,7 @@ struct StartView: View {
                             locationManager.pointALocation = locationManager.getCurrentLocation()
                         } label: {
                             Text("A")
-                        }.background(.blue, in: Capsule())
+                        }.background(.orange, in: Capsule())
                         
                         Button(action: {
                             WKInterfaceDevice.current().play(.failure)
@@ -88,7 +88,7 @@ struct StartView: View {
                             Image(systemName:"xmark")
                         }
                         .controlSize(.large)
-                        .background(.orange, in: Capsule())
+                        .background(.green, in: Capsule())
                         
                         Button {
                             locationManager.pointBLocation = locationManager.getCurrentLocation()

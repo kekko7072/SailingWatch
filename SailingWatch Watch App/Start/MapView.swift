@@ -37,7 +37,7 @@ struct MapView: View {
     private var annotations: [PointAnnotation] {
         var points = [PointAnnotation]()
         if let pointA = userLocation.pointALocation {
-            points.append(PointAnnotation(coordinate: pointA.coordinate, tint: .blue, title: "A"))
+            points.append(PointAnnotation(coordinate: pointA.coordinate, tint: .orange, title: "A"))
         }
         if let pointB = userLocation.pointBLocation {
             points.append(PointAnnotation(coordinate: pointB.coordinate, tint: .red, title: "B"))
