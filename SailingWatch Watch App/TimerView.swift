@@ -48,7 +48,7 @@ struct TimerView: View {
                 }
             }.toolbar {
                 ToolbarItem(placement: .topBarLeading) {
-                    Text(String(format: "%.0f km/h", timerModel.heartRate))
+                    Text("\(timerModel.speed, specifier: "%.0f") m/s")
                 }
                 if isStarted || timerModel.isPaused {
                     ToolbarItem(placement: .topBarTrailing) {

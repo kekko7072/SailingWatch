@@ -35,9 +35,3 @@ struct PointAnnotation: Identifiable {
     let tint: Color
     let title: String?
 }
-
-struct GPSMapView_Previews: PreviewProvider {
-    static var previews: some View {
-        GPSActiveView()
-    }
-}

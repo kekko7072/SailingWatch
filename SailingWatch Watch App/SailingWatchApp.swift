@@ -14,7 +14,10 @@ struct SailingWatch_Watch_AppApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TabView {
+                TimerView()
+                GPSView()
+            }.tabViewStyle(PageTabViewStyle())
         }
     }
 }

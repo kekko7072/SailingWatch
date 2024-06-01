@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BF65BF552C08C37900FA9193 /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF65BF542C08C37900FA9193 /* CounterView.swift */; };
+		BF65BF552C08C37900FA9193 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF65BF542C08C37900FA9193 /* TimerView.swift */; };
 		BF65BF572C08C39400FA9193 /* TimerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF65BF562C08C39400FA9193 /* TimerModel.swift */; };
 		BF65BF5A2C08CBB300FA9193 /* count.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BF65BF592C08CBB000FA9193 /* count.mp3 */; };
 		BF65BF5C2C08CBB900FA9193 /* start.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BF65BF5B2C08CBB600FA9193 /* start.mp3 */; };
@@ -17,11 +17,8 @@
 		BFD9477F2AED4B5400BCA3ED /* SailingWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD9477E2AED4B5400BCA3ED /* SailingWatchApp.swift */; };
 		BFD947832AED4B5500BCA3ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFD947822AED4B5500BCA3ED /* Assets.xcassets */; };
 		BFD947B62AED4D5700BCA3ED /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD947B12AED4D5700BCA3ED /* LocationManager.swift */; };
-		BFD947BE2AED4DAE00BCA3ED /* GPSSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD947B92AED4DAE00BCA3ED /* GPSSelectionView.swift */; };
-		BFD947BF2AED4DAE00BCA3ED /* GPSActiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD947BA2AED4DAE00BCA3ED /* GPSActiveView.swift */; };
-		BFD947C02AED4DAE00BCA3ED /* GPSErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD947BB2AED4DAE00BCA3ED /* GPSErrorView.swift */; };
-		BFD947C12AED4DAE00BCA3ED /* GPSWrapperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD947BC2AED4DAE00BCA3ED /* GPSWrapperView.swift */; };
-		BFD947C22AED4DAE00BCA3ED /* GPSRequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD947BD2AED4DAE00BCA3ED /* GPSRequestView.swift */; };
+		BFD947BF2AED4DAE00BCA3ED /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD947BA2AED4DAE00BCA3ED /* MapView.swift */; };
+		BFD947C12AED4DAE00BCA3ED /* GPSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD947BC2AED4DAE00BCA3ED /* GPSView.swift */; };
 		BFD947C62AED4EA100BCA3ED /* Preview Content in Resources */ = {isa = PBXBuildFile; fileRef = BFD947C52AED4EA100BCA3ED /* Preview Content */; };
 /* End PBXBuildFile section */
 
@@ -50,7 +47,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		BF65BF542C08C37900FA9193 /* CounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterView.swift; sourceTree = "<group>"; };
+		BF65BF542C08C37900FA9193 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		BF65BF562C08C39400FA9193 /* TimerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerModel.swift; sourceTree = "<group>"; };
 		BF65BF582C08C91C00FA9193 /* SailingWatch Watch App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "SailingWatch Watch App.entitlements"; sourceTree = "<group>"; };
 		BF65BF592C08CBB000FA9193 /* count.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = count.mp3; sourceTree = "<group>"; };
@@ -63,11 +60,8 @@
 		BFD947822AED4B5500BCA3ED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BFD947A62AED4CC200BCA3ED /* SailingWatch-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "SailingWatch-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
 		BFD947B12AED4D5700BCA3ED /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
-		BFD947B92AED4DAE00BCA3ED /* GPSSelectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GPSSelectionView.swift; sourceTree = "<group>"; };
-		BFD947BA2AED4DAE00BCA3ED /* GPSActiveView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GPSActiveView.swift; sourceTree = "<group>"; };
-		BFD947BB2AED4DAE00BCA3ED /* GPSErrorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GPSErrorView.swift; sourceTree = "<group>"; };
-		BFD947BC2AED4DAE00BCA3ED /* GPSWrapperView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GPSWrapperView.swift; sourceTree = "<group>"; };
-		BFD947BD2AED4DAE00BCA3ED /* GPSRequestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GPSRequestView.swift; sourceTree = "<group>"; };
+		BFD947BA2AED4DAE00BCA3ED /* MapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		BFD947BC2AED4DAE00BCA3ED /* GPSView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GPSView.swift; sourceTree = "<group>"; };
 		BFD947C52AED4EA100BCA3ED /* Preview Content */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Preview Content"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -104,10 +98,10 @@
 			children = (
 				BF65BF582C08C91C00FA9193 /* SailingWatch Watch App.entitlements */,
 				BFD9477E2AED4B5400BCA3ED /* SailingWatchApp.swift */,
-				BF65BF542C08C37900FA9193 /* CounterView.swift */,
+				BF65BF542C08C37900FA9193 /* TimerView.swift */,
+				BFD947BC2AED4DAE00BCA3ED /* GPSView.swift */,
 				BFD947C42AED4DF200BCA3ED /* Timer */,
 				BFD947B82AED4D9F00BCA3ED /* GPS */,
-				BFD947B12AED4D5700BCA3ED /* LocationManager.swift */,
 				BFD947A62AED4CC200BCA3ED /* SailingWatch-Watch-App-Info.plist */,
 				BFD947822AED4B5500BCA3ED /* Assets.xcassets */,
 				BF65BF592C08CBB000FA9193 /* count.mp3 */,
@@ -120,11 +114,8 @@
 		BFD947B82AED4D9F00BCA3ED /* GPS */ = {
 			isa = PBXGroup;
 			children = (
-				BFD947BA2AED4DAE00BCA3ED /* GPSActiveView.swift */,
-				BFD947BB2AED4DAE00BCA3ED /* GPSErrorView.swift */,
-				BFD947BD2AED4DAE00BCA3ED /* GPSRequestView.swift */,
-				BFD947B92AED4DAE00BCA3ED /* GPSSelectionView.swift */,
-				BFD947BC2AED4DAE00BCA3ED /* GPSWrapperView.swift */,
+				BFD947B12AED4D5700BCA3ED /* LocationManager.swift */,
+				BFD947BA2AED4DAE00BCA3ED /* MapView.swift */,
 			);
 			path = GPS;
 			sourceTree = "<group>";
@@ -240,15 +231,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BFD947BE2AED4DAE00BCA3ED /* GPSSelectionView.swift in Sources */,
-				BFD947C22AED4DAE00BCA3ED /* GPSRequestView.swift in Sources */,
-				BFD947C12AED4DAE00BCA3ED /* GPSWrapperView.swift in Sources */,
+				BFD947C12AED4DAE00BCA3ED /* GPSView.swift in Sources */,
 				BFD947B62AED4D5700BCA3ED /* LocationManager.swift in Sources */,
-				BF65BF552C08C37900FA9193 /* CounterView.swift in Sources */,
-				BFD947C02AED4DAE00BCA3ED /* GPSErrorView.swift in Sources */,
+				BF65BF552C08C37900FA9193 /* TimerView.swift in Sources */,
 				BFC9345D2C0AFF1B0081C025 /* SoundInterval.swift in Sources */,
 				BF65BF572C08C39400FA9193 /* TimerModel.swift in Sources */,
-				BFD947BF2AED4DAE00BCA3ED /* GPSActiveView.swift in Sources */,
+				BFD947BF2AED4DAE00BCA3ED /* MapView.swift in Sources */,
 				BFC9345F2C0B020A0081C025 /* CountdownTime.swift in Sources */,
 				BFD9477F2AED4B5400BCA3ED /* SailingWatchApp.swift in Sources */,
 			);
@@ -397,7 +385,8 @@
 				INFOPLIST_KEY_CFBundleDisplayName = SailingWatch;
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "We need access to your health data for tracking sailing activity.";
 				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "We need access to your health data for tracking sailing activity.";
-				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Location it's used to track the start line";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Location it's used to track the start line and speed";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Location it's used to track the start line and speed";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKWatchOnly = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -432,7 +421,8 @@
 				INFOPLIST_KEY_CFBundleDisplayName = SailingWatch;
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "We need access to your health data for tracking sailing activity.";
 				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "We need access to your health data for tracking sailing activity.";
-				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Location it's used to track the start line";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Location it's used to track the start line and speed";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Location it's used to track the start line and speed";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKWatchOnly = YES;
 				LD_RUNPATH_SEARCH_PATHS = (

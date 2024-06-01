@@ -13,7 +13,6 @@ import MapKit
 class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
 
     private let locationManager = CLLocationManager()
-    @Published var state : LocationMode = LocationMode.selection
     @Published var locationStatus: CLAuthorizationStatus?
     @Published var pointALocation: CLLocation?
     @Published var pointBLocation: CLLocation?
@@ -56,14 +55,9 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
         default: return "unknown"
         }
     }
-    
-    func lineReady() {
-        state = LocationMode.active
-    }
     func lineToSet() {
         pointALocation = nil
         pointBLocation = nil
-        state = LocationMode.selection
     }
 
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
@@ -106,13 +100,4 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
         default:  print(  "unknown")
         }
     }
-}
-
-
-
-
-
-enum LocationMode: String, CaseIterable, Identifiable {
-    case selection, active
-    var id: Self { self }
 }

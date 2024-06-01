@@ -9,6 +9,8 @@ class TimerModel: NSObject, ObservableObject, HKWorkoutSessionDelegate, HKLiveWo
     @Published var isPaused: Bool = false
     @Published var countdownDuration: TimeInterval = CountdownTime.fiveMinutes.rawValue
     @Published var heartRate: Double = 0.0
+    @Published var caloriesBurned: Double = 0.0
+    @Published var speed: Double = 0.0
     @Published var isCountingDown: Bool = true
     
     private var remainingTime: TimeInterval?
@@ -20,9 +22,13 @@ class TimerModel: NSObject, ObservableObject, HKWorkoutSessionDelegate, HKLiveWo
     private var workoutSession: HKWorkoutSession?
     private var builder: HKLiveWorkoutBuilder?
     
+    private var locationManager: CLLocationManager?
+    private var lastLocation: CLLocation?
+    
     override init() {
         super.init()
         configureAudioSession()
+        configureLocationManager()
         /// Initialise display time with the initial value of countdownDuration
         self.displayTime = self.formatTime(countdownDuration)
     }
@@ -30,7 +36,8 @@ class TimerModel: NSObject, ObservableObject, HKWorkoutSessionDelegate, HKLiveWo
     func requestAuthorization() {
         let typesToShare: Set = [HKQuantityType.workoutType()]
         let typesToRead: Set = [
-            HKObjectType.quantityType(forIdentifier: .heartRate)!
+            HKObjectType.quantityType(forIdentifier: .heartRate)!,
+            HKObjectType.quantityType(forIdentifier: .activeEnergyBurned)!,
         ]
         
         healthStore.requestAuthorization(toShare: typesToShare, read: typesToRead) { success, error in
@@ -47,6 +54,8 @@ class TimerModel: NSObject, ObservableObject, HKWorkoutSessionDelegate, HKLiveWo
             startWorkoutSession()
             startCountdown()
             startHeartRateQuery()
+            startCaloriesBurnedQuery()
+            locationManager?.startUpdatingLocation()
         }
         
         /// Play start haptic
@@ -63,6 +72,7 @@ class TimerModel: NSObject, ObservableObject, HKWorkoutSessionDelegate, HKLiveWo
     
     func stop() {
         stopWorkoutSession()
+        locationManager?.stopUpdatingLocation()
         timer?.invalidate()
         isPaused = false
         remainingTime = nil
@@ -205,6 +215,14 @@ class TimerModel: NSObject, ObservableObject, HKWorkoutSessionDelegate, HKLiveWo
         }
     }
     
+    private func configureLocationManager() {
+        locationManager = CLLocationManager()
+        locationManager?.delegate = self
+        locationManager?.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager?.requestWhenInUseAuthorization()
+        locationManager?.startUpdatingLocation()
+    }
+    
     private func startHeartRateQuery() {
         guard let heartRateType = HKObjectType.quantityType(forIdentifier: .heartRate) else { return }
         
@@ -231,6 +249,30 @@ class TimerModel: NSObject, ObservableObject, HKWorkoutSessionDelegate, HKLiveWo
         }
     }
     
+    private func startCaloriesBurnedQuery() {
+        guard let energyBurnedType = HKObjectType.quantityType(forIdentifier: .activeEnergyBurned) else { return }
+        
+        let energyBurnedQuery = HKAnchoredObjectQuery(type: energyBurnedType, predicate: nil, anchor: nil, limit: HKObjectQueryNoLimit) { [weak self] query, samples, deletedObjects, anchor, error in
+            self?.processCaloriesBurnedSamples(samples)
+        }
+        
+        energyBurnedQuery.updateHandler = { [weak self] query, samples, deletedObjects, anchor, error in
+            self?.processCaloriesBurnedSamples(samples)
+        }
+        
+        healthStore.execute(energyBurnedQuery)
+    }
+
+    private func processCaloriesBurnedSamples(_ samples: [HKSample]?) {
+        guard let energyBurnedSamples = samples as? [HKQuantitySample] else { return }
+        
+        DispatchQueue.main.async {
+            if let lastSample = energyBurnedSamples.last {
+                self.caloriesBurned = lastSample.quantity.doubleValue(for: HKUnit.kilocalorie())
+            }
+        }
+    }
+    
     // MARK: - HKWorkoutSessionDelegate
     
     func workoutSession(_ workoutSession: HKWorkoutSession, didFailWithError error: Error) {
@@ -253,5 +295,29 @@ class TimerModel: NSObject, ObservableObject, HKWorkoutSessionDelegate, HKLiveWo
     
     func workoutBuilder(_ workoutBuilder: HKLiveWorkoutBuilder, didCollectDataOf collectedTypes: Set<HKSampleType>) {
         // Handle collected data
+    }
+}
+
+// MARK: - Location Manager inside timer model
+extension TimerModel: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let newLocation = locations.last else { return }
+
+        if let lastLocation = lastLocation {
+            let distance = newLocation.distance(from: lastLocation)
+            let timeInterval = newLocation.timestamp.timeIntervalSince(lastLocation.timestamp)
+            if timeInterval > 0 {
+                let speed = distance / timeInterval
+                DispatchQueue.main.async {
+                    self.speed = speed
+                }
+            }
+        }
+        
+        lastLocation = newLocation
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        // Handle error
     }
 }
