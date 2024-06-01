@@ -9,6 +9,7 @@ class TimerModel: NSObject, ObservableObject, HKWorkoutSessionDelegate, HKLiveWo
     @Published var isPaused: Bool = false
     @Published var countdownDuration: TimeInterval = CountdownTime.fiveMinutes.rawValue
     @Published var heartRate: Double = 0.0
+    @Published var isCountingDown: Bool = true
     
     private var remainingTime: TimeInterval?
     private var stopwatchStartTime: Date?
@@ -85,6 +86,7 @@ class TimerModel: NSObject, ObservableObject, HKWorkoutSessionDelegate, HKLiveWo
     }
     
     private func startCountdown() {
+        self.isCountingDown = true
         remainingTime = countdownDuration
         let endTime = Date().addingTimeInterval(countdownDuration)
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
@@ -117,6 +119,7 @@ class TimerModel: NSObject, ObservableObject, HKWorkoutSessionDelegate, HKLiveWo
     }
     
     private func startStopwatch() {
+        self.isCountingDown = false
         timer?.invalidate()
         stopwatchStartTime = Date()
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
@@ -192,7 +195,6 @@ class TimerModel: NSObject, ObservableObject, HKWorkoutSessionDelegate, HKLiveWo
     }
     
     private func checkFeedback(for remainingTime: TimeInterval) {
-        print(remainingTime)
         if let interval = soundIntervals.first(where: { $0.time == Int(remainingTime) }) {
             switch interval.feedback {
             case .audio(let audioType):

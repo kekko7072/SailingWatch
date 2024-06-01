@@ -15,6 +15,22 @@ struct ContentView: View {
                     Text(timerModel.displayTime.0)
                         .font(timerModel.displayTime.1)
                         .padding()
+                    if(!timerModel.isCountingDown){
+                        HStack{
+                            Button(action: {
+                                timerModel.pause()
+                                isStarted = false
+                            }) {
+                                Text("PAUSE").bold().foregroundStyle(.black)
+                            }.buttonStyle(.borderedProminent).tint(.orange).padding(.trailing, 5)
+                            Button(action: {
+                                timerModel.stop()
+                                isStarted = false
+                            }) {
+                                Text("STOP").bold().foregroundStyle(.black)
+                            }.buttonStyle(.borderedProminent).tint(.red).padding(.leading, 5)
+                        }.padding(.horizontal, 10)
+                    }
                 }else{
                     Picker(selection: $selectedDuration, label: EmptyView()) {
                         ForEach(CountdownTime.allCases, id: \.self) { duration in
@@ -31,9 +47,9 @@ struct ContentView: View {
                         timerModel.start()
                         isStarted = true
                     }) {
-                        Text("START").bold()
-                    }.buttonStyle(.borderedProminent)
-                        .tint(.green)
+                        Text("START").foregroundStyle(.black).bold()
+                    }.buttonStyle(.borderedProminent).tint(.green)
+                        
                 }
             }.toolbar {
                 if isStarted || timerModel.isPaused {
@@ -51,40 +67,42 @@ struct ContentView: View {
                      Image(systemName:"suit.club")
                      }
                      }*/
-                    ToolbarItemGroup(placement: .bottomBar) {
-                        
-                        Button {
-                            timerModel.syncToNextInterval()
-                        } label: {
-                            Image(systemName:"arrow.triangle.2.circlepath")
-                        }.background(.blue, in: Capsule())
-                        
-                        
-                        if isStarted {
+                    if timerModel.isCountingDown {
+                        ToolbarItemGroup(placement: .bottomBar) {
+                            
+                            Button {
+                                timerModel.syncToNextInterval()
+                            } label: {
+                                Image(systemName:"arrow.triangle.2.circlepath")
+                            }.background(.blue, in: Capsule())
+                            
+                            
+                            if isStarted {
+                                Button(action: {
+                                    timerModel.pause()
+                                    isStarted = false
+                                }) {
+                                    Image(systemName:"pause")
+                                }.controlSize(.large)
+                                    .background(.orange, in: Capsule())
+                            } else if timerModel.isPaused {
+                                Button(action: {
+                                    timerModel.start()
+                                    isStarted = true
+                                }) {
+                                    Image(systemName:"playpause")
+                                }
+                                .controlSize(.large)
+                                .background(.green, in: Capsule())
+                            }
+                            
                             Button(action: {
-                                timerModel.pause()
+                                timerModel.stop()
                                 isStarted = false
                             }) {
-                                Image(systemName:"pause")
-                            }.controlSize(.large)
-                                .background(.orange, in: Capsule())
-                        } else if timerModel.isPaused {
-                            Button(action: {
-                                timerModel.start()
-                                isStarted = true
-                            }) {
-                                Image(systemName:"playpause")
-                            }
-                            .controlSize(.large)
-                            .background(.green, in: Capsule())
+                                Image(systemName:"stop")
+                            }.background(.red, in: Capsule())
                         }
-                        
-                        Button(action: {
-                            timerModel.stop()
-                            isStarted = false
-                        }) {
-                            Image(systemName:"stop")
-                        }.background(.red, in: Capsule())
                     }
                 }
             }

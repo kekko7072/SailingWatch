@@ -75,4 +75,9 @@ let soundIntervals: [SoundInterval] = [
     SoundInterval(time: -8, feedback: .haptic(.failure)),
     SoundInterval(time: -9, feedback: .haptic(.failure)),
     SoundInterval(time: -10, feedback: .haptic(.failure)),
+    SoundInterval(time: -11, feedback: .haptic(.failure)),
+    SoundInterval(time: -12, feedback: .haptic(.failure)),
+    SoundInterval(time: -13, feedback: .haptic(.failure)),
+    SoundInterval(time: -14, feedback: .haptic(.failure)),
+    SoundInterval(time: -15, feedback: .haptic(.failure)),
 ]
