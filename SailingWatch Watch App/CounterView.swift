@@ -16,20 +16,14 @@ struct ContentView: View {
                         .font(timerModel.displayTime.1)
                         .padding()
                     if(!timerModel.isCountingDown){
-                        HStack{
-                            Button(action: {
-                                timerModel.pause()
-                                isStarted = false
-                            }) {
-                                Text("PAUSE").bold().foregroundStyle(.black)
-                            }.buttonStyle(.borderedProminent).tint(.orange).padding(.trailing, 5)
-                            Button(action: {
-                                timerModel.stop()
-                                isStarted = false
-                            }) {
-                                Text("STOP").bold().foregroundStyle(.black)
-                            }.buttonStyle(.borderedProminent).tint(.red).padding(.leading, 5)
-                        }.padding(.horizontal, 10)
+                        
+                        Button(action: {
+                            timerModel.stop()
+                            isStarted = false
+                        }) {
+                            Text("FINISH").bold().foregroundStyle(.black)
+                        }.buttonStyle(.borderedProminent).tint(.red)
+                        
                     }
                 }else{
                     Picker(selection: $selectedDuration, label: EmptyView()) {
@@ -49,7 +43,7 @@ struct ContentView: View {
                     }) {
                         Text("START").foregroundStyle(.black).bold()
                     }.buttonStyle(.borderedProminent).tint(.green)
-                        
+                    
                 }
             }.toolbar {
                 if isStarted || timerModel.isPaused {
