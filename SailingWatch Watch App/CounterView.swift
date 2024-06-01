@@ -33,7 +33,7 @@ struct ContentView: View {
                         Text(String(format: "%.0f BPM", timerModel.heartRate))
                             .font(.headline)
                             .padding()
-                            .background(Color.red.opacity(0.7))
+                            .background(Color.teal.opacity(0.7))
                             .cornerRadius(10)
                     }
                 }
@@ -50,7 +50,7 @@ struct ContentView: View {
                             timerModel.syncToNextInterval()
                         } label: {
                             Image(systemName:"arrow.triangle.2.circlepath")
-                        }
+                        }.background(.blue, in: Capsule())
                     }else{
                         Spacer()
                     }
@@ -89,7 +89,7 @@ struct ContentView: View {
                             isStarted = false
                         }) {
                             Image(systemName:"stop")
-                        }
+                        }.background(.red, in: Capsule())
                     }else{
                         Spacer()
                     }

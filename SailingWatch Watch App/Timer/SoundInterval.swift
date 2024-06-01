@@ -48,6 +48,7 @@ class SoundInterval {
 }
 
 let soundIntervals: [SoundInterval] = [
+    /// Count Down values
     SoundInterval(time: 240, feedback: .audio(.count)),
     SoundInterval(time: 120, feedback: .audio(.count)),
     SoundInterval(time: 60, feedback: .audio(.count)),
@@ -63,4 +64,15 @@ let soundIntervals: [SoundInterval] = [
     SoundInterval(time: 2, feedback: .haptic(.success)),
     SoundInterval(time: 1, feedback: .haptic(.success)),
     SoundInterval(time: 0, feedback: .haptic(.failure)),
+    /// Count Up values
+    SoundInterval(time: -1, feedback: .haptic(.failure)),
+    SoundInterval(time: -2, feedback: .haptic(.failure)),
+    SoundInterval(time: -3, feedback: .haptic(.failure)),
+    SoundInterval(time: -4, feedback: .haptic(.failure)),
+    SoundInterval(time: -5, feedback: .haptic(.failure)),
+    SoundInterval(time: -6, feedback: .haptic(.failure)),
+    SoundInterval(time: -7, feedback: .haptic(.failure)),
+    SoundInterval(time: -8, feedback: .haptic(.failure)),
+    SoundInterval(time: -9, feedback: .haptic(.failure)),
+    SoundInterval(time: -10, feedback: .haptic(.failure)),
 ]

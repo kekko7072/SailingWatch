@@ -76,7 +76,9 @@ class TimerModel: NSObject, ObservableObject, HKWorkoutSessionDelegate, HKLiveWo
             self.remainingTime = nextInterval.toTime()
             self.displayTime = self.formatTime(nextInterval.toTime())
             timer?.invalidate()
-            resumeCountdown(from: nextInterval.toTime())
+            if(!isPaused){
+                resumeCountdown(from: nextInterval.toTime())
+            }
         }
         /// Play start haptic
         playHaptic(for: .retry)
