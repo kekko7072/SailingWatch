@@ -12,23 +12,31 @@ struct MainView: View {
     
     @ObservedObject var storeManager: StoreManager
     @State private var showAlert = false
+    @State private var showStoreSheet = false
     
     var body: some View {
         TabView {
             TimerView()
-            if !storeManager.activeTransactions.isEmpty{
-                StartView()
-            } else {
-                StoreView(storeManager: storeManager)
+            ZStack{
+                if !showAlert{
+                    StartView()
+                } else {
+                    StoreView(storeManager: storeManager)
+                }
+            }.alert(isPresented: $showAlert) {
+                Alert(
+                    title: Text("Free Trial"),
+                    message: Text("The Line Tracking Feature of the app is free for the first three weeks."),
+                    primaryButton: .cancel(Text("Purchase Now"), action: {
+                        showStoreSheet = true
+                    }),
+                    secondaryButton: .default(Text("OK"))
+                )
             }
         }
-        .tabViewStyle(PageTabViewStyle()).onAppear(perform: checkForAlert).alert(isPresented: $showAlert) {
-            Alert(
-                title: Text("Free Trial"),
-                message: Text("The Line Tracking Feature of the app is free for the first three weeks."),
-                dismissButton: .default(Text("OK"))
-            )
-        }
+        .tabViewStyle(PageTabViewStyle()).onAppear(perform: checkForAlert).sheet(isPresented: $showStoreSheet, content: {
+            StoreView(storeManager: storeManager, showStoreSheet)
+        })
     }
     
     private func checkForAlert() {
@@ -37,7 +45,6 @@ struct MainView: View {
         if(!storeManager.activeTransactions.isEmpty){
             showAlert = false
         }else{
-            
             let firstDate = Date(timeIntervalSince1970: firstTimestamp)
             let currentDate = Date()
             let calendar = Calendar.current

@@ -13,6 +13,11 @@
           "description" : "Lifetime purchase for GPS tracking",
           "displayName" : "Lifetime",
           "locale" : "en_US"
+        },
+        {
+          "description" : "Acquista per sempre il GPS tracking",
+          "displayName" : "Acquista",
+          "locale" : "it"
         }
       ],
       "productID" : "00",
@@ -25,7 +30,7 @@
     "_billingGracePeriodEnabled" : false,
     "_developerTeamID" : "P8WULW25UZ",
     "_failTransactionsEnabled" : false,
-    "_lastSynchronizedDate" : 738955820.52751398,
+    "_lastSynchronizedDate" : 738962767.39061797,
     "_locale" : "en_US",
     "_storefront" : "ITA",
     "_storeKitErrors" : [
@@ -98,6 +103,11 @@
           "introductoryOffer" : null,
           "localizations" : [
             {
+              "description" : "Abbonamento per il tracking GPS",
+              "displayName" : "Mensile",
+              "locale" : "it"
+            },
+            {
               "description" : "Subscription for GPS tracking",
               "displayName" : "Monthly",
               "locale" : "en_US"
@@ -122,6 +132,11 @@
           "internalID" : "6503645277",
           "introductoryOffer" : null,
           "localizations" : [
+            {
+              "description" : "Abbonamento per il tracking GPS",
+              "displayName" : "Annuale",
+              "locale" : "it"
+            },
             {
               "description" : "Subscription for GPS tracking",
               "displayName" : "Yearly",
