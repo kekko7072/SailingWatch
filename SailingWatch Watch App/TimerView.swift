@@ -2,7 +2,7 @@ import SwiftUI
 import WatchKit
 import HealthKit
 
-struct ContentView: View {
+struct TimerView: View {
     @StateObject private var timerModel = TimerModel()
     @State private var isStarted = false
     @State private var selectedDuration = CountdownTime.fiveMinutes
@@ -47,13 +47,15 @@ struct ContentView: View {
                     
                 }
             }.toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    Text(String(format: "%.0f km/h", timerModel.heartRate))
+                }
                 if isStarted || timerModel.isPaused {
-                    ToolbarItem(placement: .topBarLeading) {
-                        Text(String(format: "%.0f BPM", timerModel.heartRate))
-                            .font(.headline)
-                            .padding()
-                            .background(Color.teal.opacity(0.7))
-                            .cornerRadius(10)
+                    ToolbarItem(placement: .topBarTrailing) {
+                        HStack{
+                            Text(String(format: "%.0f", timerModel.heartRate))
+                            Image(systemName: "heart")
+                        }
                     }
                     /*ToolbarItem(placement: .topBarTrailing) {
                      Button {
@@ -109,5 +111,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    TimerView()
 }

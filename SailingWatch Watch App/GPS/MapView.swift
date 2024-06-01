@@ -16,31 +16,6 @@ var LAT_LINE = 46.57589
 var LNG_LINE_A = 12.39095
 var LNG_LINE_B = 12.392
 
-struct GPSActiveView: View {
-    @EnvironmentObject var userLocation: LocationManager
-    @State var disableTouch = true
-    var body: some View {
-        
-            //Text("User Location: \(userLocation.liveLocation?.coordinate.latitude ?? 0), \(userLocation.liveLocation?.coordinate.longitude ?? 0)")
-            VStack {
-                MapView(userLocation: userLocation)
-                    .scaledToFill()
-                    .cornerRadius(10).padding().disabled(disableTouch)
-                HStack{
-                    Spacer()
-                    Button(action: {
-                        WKInterfaceDevice.current().play(.failure)
-                        userLocation.lineToSet()
-                    }, label: {
-                        Text("RESET").font(.subheadline.weight(.bold)).foregroundColor(.black)
-                    }).buttonStyle(.borderedProminent)
-                        .tint(.red).padding(.horizontal)
-                    Spacer()
-                }.padding(.bottom)
-            }
-        }
-}
-
 struct MapView: View {
     var userLocation: LocationManager
     
