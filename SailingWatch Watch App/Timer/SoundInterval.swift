@@ -49,6 +49,11 @@ class SoundInterval {
 
 let soundIntervals: [SoundInterval] = [
     /// Count Down values
+    SoundInterval(time: 540, feedback: .audio(.count)),
+    SoundInterval(time: 480, feedback: .audio(.count)),
+    SoundInterval(time: 420, feedback: .audio(.count)),
+    SoundInterval(time: 360, feedback: .audio(.count)),
+    SoundInterval(time: 300, feedback: .audio(.count)),
     SoundInterval(time: 240, feedback: .audio(.count)),
     SoundInterval(time: 120, feedback: .audio(.count)),
     SoundInterval(time: 60, feedback: .audio(.count)),
