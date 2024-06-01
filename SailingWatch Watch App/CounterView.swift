@@ -16,9 +16,9 @@ struct ContentView: View {
                         .font(.largeTitle)
                         .padding()
                 }else{
-                    Picker(selection: $selectedDuration, label: Text("Select Duration")) {
+                    Picker(selection: $selectedDuration, label: EmptyView()) {
                         ForEach(CountdownTime.allCases, id: \.self) { duration in
-                            Text(duration.displayString).font(.title).tag(duration)
+                            Text(duration.displayString).font(.title2).tag(duration)
                         }
                     }
                     .onChange(of: selectedDuration) { oldValue, newValue in
@@ -27,24 +27,26 @@ struct ContentView: View {
                     .padding().padding(.bottom, 10)
                 }
             }.toolbar {
-                ToolbarItem(placement: .topBarLeading) {
-                    Button {
-                        // Perform an action here.
-                    } label: {
-                        Image(systemName:"suit.heart")
+                if isStarted || timerModel.isPaused {
+                    ToolbarItem(placement: .topBarLeading) {
+                        Text(String(format: "%.0f BPM", timerModel.heartRate))
+                            .font(.headline)
+                            .padding()
+                            .background(Color.red.opacity(0.7))
+                            .cornerRadius(10)
                     }
                 }
-                ToolbarItem(placement: .topBarTrailing) {
+                /*ToolbarItem(placement: .topBarTrailing) {
                     Button {
                         // Perform an action here.
                     } label: {
                         Image(systemName:"suit.club")
                     }
-                }
+                }*/
                 ToolbarItemGroup(placement: .bottomBar) {
                     if isStarted || timerModel.isPaused {
                         Button {
-                            // Perform an action here.
+                            timerModel.syncToNextInterval()
                         } label: {
                             Image(systemName:"arrow.triangle.2.circlepath")
                         }

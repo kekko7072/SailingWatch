@@ -23,15 +23,8 @@ class SoundInterval {
     var feedback: FeedbackType
     
     init(time: TimeInterval, feedback: FeedbackType) {
+        self.time = time
         self.feedback = feedback
-        switch feedback {
-        case .audio:
-            // This delay it's added due to latency on response of AVAudio
-            // So it's necessary to play the sound 3 seconds before
-            self.time = time + 3
-        case .haptic:
-            self.time = time
-        }
     }
 }
 

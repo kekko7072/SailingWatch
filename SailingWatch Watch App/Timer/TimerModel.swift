@@ -7,7 +7,8 @@ class TimerModel: NSObject, ObservableObject, HKWorkoutSessionDelegate, HKLiveWo
     @Published var displayTime: String = "00:00:00"
     @Published var isPaused: Bool = false
     @Published var countdownDuration: TimeInterval = CountdownTime.fiveMinutes.rawValue
-
+    @Published var heartRate: Double = 0.0
+    
     private var remainingTime: TimeInterval?
     private var stopwatchStartTime: Date?
     private var timer: Timer?
@@ -41,6 +42,7 @@ class TimerModel: NSObject, ObservableObject, HKWorkoutSessionDelegate, HKLiveWo
         } else {
             startWorkoutSession()
             startCountdown()
+            startHeartRateQuery()
         }
         
         /// Play start haptic
@@ -65,8 +67,17 @@ class TimerModel: NSObject, ObservableObject, HKWorkoutSessionDelegate, HKLiveWo
         playHaptic(for: .failure)
     }
     
+    func syncToNextInterval() {
+        guard let remainingTime = remainingTime else { return }
+        if let nextInterval = soundIntervals.first(where: { $0.time < remainingTime }) {
+            self.remainingTime = nextInterval.time
+            self.displayTime = self.formatTime(nextInterval.time)
+            timer?.invalidate()
+            resumeCountdown(from: nextInterval.time)
+        }
+    }
+    
     private func startCountdown() {
-        
         remainingTime = countdownDuration
         let endTime = Date().addingTimeInterval(countdownDuration)
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
@@ -182,6 +193,32 @@ class TimerModel: NSObject, ObservableObject, HKWorkoutSessionDelegate, HKLiveWo
                 playAudio(for: audioType)
             case .haptic(let hapticType):
                 playHaptic(for: hapticType)
+            }
+        }
+    }
+    
+    private func startHeartRateQuery() {
+        guard let heartRateType = HKObjectType.quantityType(forIdentifier: .heartRate) else { return }
+        
+        let datePredicate = HKQuery.predicateForSamples(withStart: Date(), end: nil, options: .strictStartDate)
+        
+        let heartRateQuery = HKAnchoredObjectQuery(type: heartRateType, predicate: datePredicate, anchor: nil, limit: HKObjectQueryNoLimit) { [weak self] query, samples, deletedObjects, anchor, error in
+            self?.processHeartRateSamples(samples)
+        }
+        
+        heartRateQuery.updateHandler = { [weak self] query, samples, deletedObjects, anchor, error in
+            self?.processHeartRateSamples(samples)
+        }
+        
+        healthStore.execute(heartRateQuery)
+    }
+    
+    private func processHeartRateSamples(_ samples: [HKSample]?) {
+        guard let heartRateSamples = samples as? [HKQuantitySample] else { return }
+        
+        DispatchQueue.main.async {
+            if let lastSample = heartRateSamples.last {
+                self.heartRate = lastSample.quantity.doubleValue(for: HKUnit(from: "count/min"))
             }
         }
     }
