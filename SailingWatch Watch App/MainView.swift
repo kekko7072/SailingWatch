@@ -13,7 +13,7 @@ struct MainView: View {
     
     init(storeManager: StoreManager,_ dismissPurchase: Bool = false) {
         self.storeManager = storeManager
-        self.dismissPurchase = !storeManager.activeTransactions.isEmpty
+        self.dismissPurchase = storeManager.activeTransactions.isEmpty
     }
     
     var body: some View {

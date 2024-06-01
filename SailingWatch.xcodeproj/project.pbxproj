@@ -103,7 +103,6 @@
 				BF7664FE2C0B6E82008A0B1A /* StoreView.swift */,
 				BF7664F72C0B6C09008A0B1A /* StoreManager.swift */,
 				BF7664FA2C0B6C61008A0B1A /* ProductIdentifiers.swift */,
-				BF7664FC2C0B6D61008A0B1A /* SailingWatch.storekit */,
 			);
 			path = Store;
 			sourceTree = "<group>";
@@ -137,6 +136,7 @@
 				BFD947C42AED4DF200BCA3ED /* Timer */,
 				BFD947B82AED4D9F00BCA3ED /* Start */,
 				BF7664F92C0B6C10008A0B1A /* Store */,
+				BF7664FC2C0B6D61008A0B1A /* SailingWatch.storekit */,
 				BFD947A62AED4CC200BCA3ED /* SailingWatch-Watch-App-Info.plist */,
 				BFD947822AED4B5500BCA3ED /* Assets.xcassets */,
 				BF65BF592C08CBB000FA9193 /* count.mp3 */,

@@ -10,13 +10,13 @@
       "internalID" : "6503645427",
       "localizations" : [
         {
-          "description" : "Precision for sailing races and training",
-          "displayName" : "SailingWatch Ultimate",
+          "description" : "Lifetime purchase for GPS tracking",
+          "displayName" : "Lifetime",
           "locale" : "en_US"
         }
       ],
       "productID" : "00",
-      "referenceName" : "SailingWatch Ultimate",
+      "referenceName" : "Lifetime",
       "type" : "NonConsumable"
     }
   ],
@@ -25,7 +25,7 @@
     "_billingGracePeriodEnabled" : false,
     "_developerTeamID" : "P8WULW25UZ",
     "_failTransactionsEnabled" : false,
-    "_lastSynchronizedDate" : 738953472.90404701,
+    "_lastSynchronizedDate" : 738955820.52751398,
     "_locale" : "en_US",
     "_storefront" : "ITA",
     "_storeKitErrors" : [
@@ -98,14 +98,14 @@
           "introductoryOffer" : null,
           "localizations" : [
             {
-              "description" : "Precision for sailing races and training",
-              "displayName" : "SailingWatch Plus",
+              "description" : "Subscription for GPS tracking",
+              "displayName" : "Monthly",
               "locale" : "en_US"
             }
           ],
           "productID" : "02",
           "recurringSubscriptionPeriod" : "P1M",
-          "referenceName" : "SailingWatch Plus",
+          "referenceName" : "Monthly",
           "subscriptionGroupID" : "21495133",
           "type" : "RecurringSubscription"
         },
@@ -123,14 +123,14 @@
           "introductoryOffer" : null,
           "localizations" : [
             {
-              "description" : "Precision for sailing races and training",
-              "displayName" : "SailingWatch Pro",
+              "description" : "Subscription for GPS tracking",
+              "displayName" : "Yearly",
               "locale" : "en_US"
             }
           ],
           "productID" : "01",
           "recurringSubscriptionPeriod" : "P1Y",
-          "referenceName" : "SailingWatch Pro",
+          "referenceName" : "Yearly",
           "subscriptionGroupID" : "21495133",
           "type" : "RecurringSubscription"
         }
