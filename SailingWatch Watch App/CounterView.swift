@@ -25,7 +25,15 @@ struct ContentView: View {
                         timerModel.countdownDuration = newValue.rawValue
                         timerModel.displayTime = timerModel.formatTime(newValue.rawValue)
                     }
-                    .padding().padding(.bottom, 10)
+                    .padding()
+                    
+                    Button(action: {
+                        timerModel.start()
+                        isStarted = true
+                    }) {
+                        Text("START").bold()
+                    }.buttonStyle(.borderedProminent)
+                        .tint(.green)
                 }
             }.toolbar {
                 if isStarted || timerModel.isPaused {
@@ -36,62 +44,47 @@ struct ContentView: View {
                             .background(Color.teal.opacity(0.7))
                             .cornerRadius(10)
                     }
-                }
-                /*ToolbarItem(placement: .topBarTrailing) {
-                    Button {
-                        // Perform an action here.
-                    } label: {
-                        Image(systemName:"suit.club")
-                    }
-                }*/
-                ToolbarItemGroup(placement: .bottomBar) {
-                    if isStarted || timerModel.isPaused {
+                    /*ToolbarItem(placement: .topBarTrailing) {
+                     Button {
+                     // Perform an action here.
+                     } label: {
+                     Image(systemName:"suit.club")
+                     }
+                     }*/
+                    ToolbarItemGroup(placement: .bottomBar) {
+                        
                         Button {
                             timerModel.syncToNextInterval()
                         } label: {
                             Image(systemName:"arrow.triangle.2.circlepath")
                         }.background(.blue, in: Capsule())
-                    }else{
-                        Spacer()
-                    }
-                    
-                    if isStarted {
-                        Button(action: {
-                            timerModel.pause()
-                            isStarted = false
-                        }) {
-                            Image(systemName:"pause")
-                        }.controlSize(.large)
-                            .background(.orange, in: Capsule())
-                    } else if timerModel.isPaused {
-                        Button(action: {
-                            timerModel.start()
-                            isStarted = true
-                        }) {
-                            Image(systemName:"playpause")
+                        
+                        
+                        if isStarted {
+                            Button(action: {
+                                timerModel.pause()
+                                isStarted = false
+                            }) {
+                                Image(systemName:"pause")
+                            }.controlSize(.large)
+                                .background(.orange, in: Capsule())
+                        } else if timerModel.isPaused {
+                            Button(action: {
+                                timerModel.start()
+                                isStarted = true
+                            }) {
+                                Image(systemName:"playpause")
+                            }
+                            .controlSize(.large)
+                            .background(.green, in: Capsule())
                         }
-                        .controlSize(.large)
-                        .background(.green, in: Capsule())
-                    } else {
-                        Button(action: {
-                            timerModel.start()
-                            isStarted = true
-                        }) {
-                            Image(systemName:"play")
-                        }
-                        .controlSize(.large)
-                        .background(.green, in: Capsule())
-                    }
-                    
-                    if isStarted || timerModel.isPaused {
+                        
                         Button(action: {
                             timerModel.stop()
                             isStarted = false
                         }) {
                             Image(systemName:"stop")
                         }.background(.red, in: Capsule())
-                    }else{
-                        Spacer()
                     }
                 }
             }

@@ -123,6 +123,7 @@ class TimerModel: NSObject, ObservableObject, HKWorkoutSessionDelegate, HKLiveWo
             guard let startTime = self.stopwatchStartTime else { return }
             let elapsedTime = Date().timeIntervalSince(startTime)
             self.displayTime = self.formatTime(elapsedTime)
+            self.checkFeedback(for: -elapsedTime)
         }
     }
     
@@ -191,6 +192,7 @@ class TimerModel: NSObject, ObservableObject, HKWorkoutSessionDelegate, HKLiveWo
     }
     
     private func checkFeedback(for remainingTime: TimeInterval) {
+        print(remainingTime)
         if let interval = soundIntervals.first(where: { $0.time == Int(remainingTime) }) {
             switch interval.feedback {
             case .audio(let audioType):
