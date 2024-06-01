@@ -1,8 +1,8 @@
 //
-//  GPSSelectorView.swift
+//  GPSView.swift
 //  SailingWatch Watch App
 //
-//  Created by Francesco Vezzani on 10/09/23.
+//  Created by Francesco Vezzani on 01/06/24.
 //
 
 import SwiftUI
@@ -27,7 +27,7 @@ struct GPSView: View {
                         } else {
                             Button("A"){
                                 locationManager.pointALocation = locationManager.getCurrentLocation()
-                            }.tint(.blue)
+                            }.foregroundStyle(.white).tint(.blue)
                         }
                         if locationManager.pointBLocation != nil {
                             Button("B"){
@@ -36,7 +36,7 @@ struct GPSView: View {
                         } else {
                             Button("B"){
                                 locationManager.pointBLocation = locationManager.getCurrentLocation()
-                            }.tint(.red)
+                            }.foregroundStyle(.white).tint(.red)
                         }
                     }
                     Spacer()
@@ -47,7 +47,7 @@ struct GPSView: View {
                     }else {
                         Button("READY"){
                             WKInterfaceDevice.current().play(.failure)
-                        }.tint(.green)
+                        }.foregroundStyle(.white).tint(.green)
                     }
                     Spacer()
                 }.foregroundStyle(.black).bold().onAppear {
@@ -60,8 +60,13 @@ struct GPSView: View {
                 VStack {
                     MapView(userLocation: locationManager)
                         .scaledToFill()
-                        .cornerRadius(10).padding().disabled(true)
+                        .cornerRadius(10).disabled(true)
                 }.toolbar {
+                    if let speed = locationManager.liveLocation?.speed {
+                    ToolbarItemGroup(placement: .topBarLeading) {
+                        Text("\(speed, specifier: "%.0f") m/s").padding().background(.purple).cornerRadius(10)
+                        }
+                    }
                     ToolbarItemGroup(placement: .bottomBar) {
                         Button {
                             locationManager.pointALocation = locationManager.getCurrentLocation()

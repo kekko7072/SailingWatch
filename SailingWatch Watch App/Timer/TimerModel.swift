@@ -1,3 +1,10 @@
+//
+//  TimerModel.swift
+//  SailingWatch Watch App
+//
+//  Created by Francesco Vezzani on 01/06/24.
+//
+
 import Foundation
 import SwiftUI
 import HealthKit

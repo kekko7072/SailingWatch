@@ -1,31 +1,43 @@
 //
-//  GPSMapView.swift
+//  MapView.swift
 //  SailingWatch Watch App
 //
-//  Created by Francesco Vezzani on 10/09/23.
+//  Edited by Francesco Vezzani on 01/06/24.
 //
 
 import SwiftUI
 import MapKit
 import CoreLocation
 
-var LAT_USER = 42.22
-var LNG_USER = 12.21
-
-var LAT_LINE = 46.57589
-var LNG_LINE_A = 12.39095
-var LNG_LINE_B = 12.392
+let defaultCoordinate = CLLocationCoordinate2D(latitude: 42.22, longitude: 12.21)
 
 struct MapView: View {
-    var userLocation: LocationManager
+    @StateObject var userLocation = LocationManager()
     
     var body: some View {
-        Map(coordinateRegion: .constant(MKCoordinateRegion(center: userLocation.liveLocation?.coordinate ?? CLLocationCoordinate2D(latitude: LAT_USER, longitude: LNG_USER), latitudinalMeters: 250, longitudinalMeters: 250)), showsUserLocation: true, userTrackingMode: .constant(.follow), annotationItems: [
-            PointAnnotation(coordinate: userLocation.pointALocation!.coordinate , tint: .blue, title: "Point A"),
-            PointAnnotation(coordinate: userLocation.pointBLocation?.coordinate ?? CLLocationCoordinate2D(latitude: LAT_USER, longitude: LNG_USER), tint: .blue, title: "Point B"),
-        ]) { annotation in
+        Map(
+            coordinateRegion: .constant(MKCoordinateRegion(
+                center: userLocation.liveLocation?.coordinate ?? defaultCoordinate,
+                latitudinalMeters: 250,
+                longitudinalMeters: 250)
+            ),
+            showsUserLocation: true,
+            userTrackingMode: .constant(.follow),
+            annotationItems: annotations
+        ) { annotation in
             MapMarker(coordinate: annotation.coordinate, tint: annotation.tint)
         }
+    }
+    
+    private var annotations: [PointAnnotation] {
+        var points = [PointAnnotation]()
+        if let pointA = userLocation.pointALocation {
+            points.append(PointAnnotation(coordinate: pointA.coordinate, tint: .blue, title: "Point A"))
+        }
+        if let pointB = userLocation.pointBLocation {
+            points.append(PointAnnotation(coordinate: pointB.coordinate, tint: .blue, title: "Point B"))
+        }
+        return points
     }
 }
 
@@ -34,4 +46,8 @@ struct PointAnnotation: Identifiable {
     let coordinate: CLLocationCoordinate2D
     let tint: Color
     let title: String?
+}
+
+#Preview {
+    MapView()
 }

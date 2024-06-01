@@ -2,9 +2,9 @@
 //  SailingWatchApp.swift
 //  SailingWatch Watch App
 //
-//  Created by Francesco Vezzani on 12/09/23.
+//  Edite by Francesco Vezzani on 01/06/24.
 //
-// SailingWatch_Watch_AppApp
+
 import SwiftUI
 import WatchKit
 
