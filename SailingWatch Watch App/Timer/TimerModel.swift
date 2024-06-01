@@ -165,7 +165,7 @@ class TimerModel: NSObject, ObservableObject, HKWorkoutSessionDelegate, HKLiveWo
         if hours > 0 {
             return (String(format: "%02d:%02d:%02d", hours, minutes, seconds), .largeTitle)
         }else{
-            return (String(format: "%02d:%02d", minutes, seconds),.system(size: 60))
+            return (String(format: "%02d:%02d", minutes, seconds),.system(size: 58))
         }
     }
     
