@@ -19,12 +19,31 @@ enum FeedbackType {
 }
 
 class SoundInterval {
-    var time: TimeInterval
+    var time: Int
     var feedback: FeedbackType
     
-    init(time: TimeInterval, feedback: FeedbackType) {
-        self.time = time
+    init(time: Int, feedback: FeedbackType) {
         self.feedback = feedback
+        
+        switch feedback {
+        case .audio(let audioType):
+            /// This latecny it's necessary to make sure audio it's played at the correct time
+            /// due to latency in audio playing from AVAudio
+            self.time = time + 3
+        case .haptic(let wKHapticType):
+            self.time = time
+        }
+    }
+    
+    public func toTime() -> TimeInterval {
+        switch self.feedback {
+        case .audio(let audioType):
+            /// This to remove latency when displaying and sync time
+            return TimeInterval(self.time - 3)
+        case .haptic(let wKHapticType):
+            return TimeInterval(self.time)
+        }
+        
     }
 }
 

@@ -69,12 +69,14 @@ class TimerModel: NSObject, ObservableObject, HKWorkoutSessionDelegate, HKLiveWo
     
     func syncToNextInterval() {
         guard let remainingTime = remainingTime else { return }
-        if let nextInterval = soundIntervals.first(where: { $0.time < remainingTime }) {
-            self.remainingTime = nextInterval.time
-            self.displayTime = self.formatTime(nextInterval.time)
+        if let nextInterval = soundIntervals.first(where: { $0.time < Int(remainingTime) }) {
+            self.remainingTime = nextInterval.toTime()
+            self.displayTime = self.formatTime(nextInterval.toTime())
             timer?.invalidate()
-            resumeCountdown(from: nextInterval.time)
+            resumeCountdown(from: nextInterval.toTime())
         }
+        /// Play start haptic
+        playHaptic(for: .retry)
     }
     
     private func startCountdown() {
@@ -91,9 +93,6 @@ class TimerModel: NSObject, ObservableObject, HKWorkoutSessionDelegate, HKLiveWo
                 self.checkFeedback(for: remainingTime)
             }
         }
-        
-        /// Play start haptic
-        playHaptic(for: .start)
     }
     
     private func resumeCountdown(from time: TimeInterval) {
@@ -110,9 +109,6 @@ class TimerModel: NSObject, ObservableObject, HKWorkoutSessionDelegate, HKLiveWo
             }
         }
         isPaused = false
-        
-        /// Play start haptic
-        playHaptic(for: .start)
     }
     
     private func startStopwatch() {
@@ -123,9 +119,6 @@ class TimerModel: NSObject, ObservableObject, HKWorkoutSessionDelegate, HKLiveWo
             let elapsedTime = Date().timeIntervalSince(startTime)
             self.displayTime = self.formatTime(elapsedTime)
         }
-        
-        /// Play start haptic
-        playHaptic(for: .start)
     }
     
     private func startWorkoutSession() {
@@ -187,7 +180,8 @@ class TimerModel: NSObject, ObservableObject, HKWorkoutSessionDelegate, HKLiveWo
     }
     
     private func checkFeedback(for remainingTime: TimeInterval) {
-        if let interval = soundIntervals.first(where: { $0.time == remainingTime }) {
+        print("\(Int(remainingTime))")
+        if let interval = soundIntervals.first(where: { $0.time == Int(remainingTime) }) {
             switch interval.feedback {
             case .audio(let audioType):
                 playAudio(for: audioType)
