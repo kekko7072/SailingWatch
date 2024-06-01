@@ -28,7 +28,8 @@ struct ContentView: View {
                 }else{
                     Picker(selection: $selectedDuration, label: EmptyView()) {
                         ForEach(CountdownTime.allCases, id: \.self) { duration in
-                            Text(duration.displayString).font(.title2).tag(duration)
+                            let isSelected = selectedDuration == duration
+                            Text(duration.displayString).font(isSelected ? .largeTitle : .title2).tag(duration).foregroundStyle(isSelected ? .green : .white)
                         }
                     }
                     .onChange(of: selectedDuration) { oldValue, newValue in
