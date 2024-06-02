@@ -25,7 +25,7 @@
 		BFD947832AED4B5500BCA3ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFD947822AED4B5500BCA3ED /* Assets.xcassets */; };
 		BFD947B62AED4D5700BCA3ED /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD947B12AED4D5700BCA3ED /* LocationManager.swift */; };
 		BFD947BF2AED4DAE00BCA3ED /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD947BA2AED4DAE00BCA3ED /* MapView.swift */; };
-		BFD947C12AED4DAE00BCA3ED /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD947BC2AED4DAE00BCA3ED /* StartView.swift */; };
+		BFD947C12AED4DAE00BCA3ED /* StartLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD947BC2AED4DAE00BCA3ED /* StartLineView.swift */; };
 		BFD947C62AED4EA100BCA3ED /* Preview Content in Resources */ = {isa = PBXBuildFile; fileRef = BFD947C52AED4EA100BCA3ED /* Preview Content */; };
 /* End PBXBuildFile section */
 
@@ -75,7 +75,7 @@
 		BFD947A62AED4CC200BCA3ED /* SailingWatch-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "SailingWatch-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
 		BFD947B12AED4D5700BCA3ED /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		BFD947BA2AED4DAE00BCA3ED /* MapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
-		BFD947BC2AED4DAE00BCA3ED /* StartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
+		BFD947BC2AED4DAE00BCA3ED /* StartLineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartLineView.swift; sourceTree = "<group>"; };
 		BFD947C52AED4EA100BCA3ED /* Preview Content */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Preview Content"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -134,9 +134,9 @@
 				BFD9477E2AED4B5400BCA3ED /* SailingWatchApp.swift */,
 				BF60D3B62C0B8F4C001834E6 /* MainView.swift */,
 				BF65BF542C08C37900FA9193 /* TimerView.swift */,
-				BFD947BC2AED4DAE00BCA3ED /* StartView.swift */,
+				BFD947BC2AED4DAE00BCA3ED /* StartLineView.swift */,
 				BFD947C42AED4DF200BCA3ED /* Timer */,
-				BFD947B82AED4D9F00BCA3ED /* Start */,
+				BFD947B82AED4D9F00BCA3ED /* StartLine */,
 				BF7664F92C0B6C10008A0B1A /* Store */,
 				BF7664FC2C0B6D61008A0B1A /* SailingWatch.storekit */,
 				BF807C592C0BB3FF002F837C /* Localizable.xcstrings */,
@@ -149,13 +149,13 @@
 			path = "SailingWatch Watch App";
 			sourceTree = "<group>";
 		};
-		BFD947B82AED4D9F00BCA3ED /* Start */ = {
+		BFD947B82AED4D9F00BCA3ED /* StartLine */ = {
 			isa = PBXGroup;
 			children = (
 				BFD947B12AED4D5700BCA3ED /* LocationManager.swift */,
 				BFD947BA2AED4DAE00BCA3ED /* MapView.swift */,
 			);
-			path = Start;
+			path = StartLine;
 			sourceTree = "<group>";
 		};
 		BFD947C42AED4DF200BCA3ED /* Timer */ = {
@@ -274,7 +274,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BFD947C12AED4DAE00BCA3ED /* StartView.swift in Sources */,
+				BFD947C12AED4DAE00BCA3ED /* StartLineView.swift in Sources */,
 				BF60D3B72C0B8F4C001834E6 /* MainView.swift in Sources */,
 				BFD947B62AED4D5700BCA3ED /* LocationManager.swift in Sources */,
 				BF7664FF2C0B6E82008A0B1A /* StoreView.swift in Sources */,

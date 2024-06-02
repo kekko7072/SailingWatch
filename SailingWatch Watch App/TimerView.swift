@@ -23,14 +23,39 @@ struct TimerView: View {
                         .font(timerModel.displayTime.1).bold()
                         .padding()
                     if(!timerModel.isCountingDown){
-                        
                         Button(action: {
                             timerModel.stop()
                             isStarted = false
                         }) {
                             Text("FINISH").bold().foregroundStyle(.black)
                         }.buttonStyle(.borderedProminent).tint(.red)
-                        
+                    }else{
+                        HStack{
+                            if(timerModel.isPaused){
+                                Button(action: {
+                                    timerModel.stop()
+                                    isStarted = false
+                                }) {
+                                    Image(systemName: "stop").bold().foregroundStyle(.black)
+                                }.buttonStyle(.borderedProminent).tint(.red)
+                                Button(action: {
+                                    timerModel.start()
+                                }) {
+                                    Image(systemName: "play").bold().foregroundStyle(.black)
+                                }.buttonStyle(.borderedProminent).tint(.green)
+                            }else{
+                                Button(action: {
+                                    timerModel.syncToNextInterval()
+                                }) {
+                                    Image(systemName: "arrow.triangle.2.circlepath").bold().foregroundStyle(.black)
+                                }.buttonStyle(.borderedProminent).tint(.blue)
+                                Button(action: {
+                                    timerModel.pause()
+                                }) {
+                                    Image(systemName: "pause").bold().foregroundStyle(.black)
+                                }.buttonStyle(.borderedProminent).tint(.orange)
+                            }
+                        }
                     }
                 }else{
                     Picker(selection: $selectedDuration, label: EmptyView()) {
@@ -62,43 +87,6 @@ struct TimerView: View {
                         HStack{
                             Text(String(format: "%.0f", timerModel.heartRate))
                             Image(systemName: "heart")
-                        }
-                    }
-                    if timerModel.isCountingDown {
-                        ToolbarItemGroup(placement: .bottomBar) {
-                            
-                            Button {
-                                timerModel.syncToNextInterval()
-                            } label: {
-                                Image(systemName:"arrow.triangle.2.circlepath")
-                            }.background(.blue, in: Capsule())
-                            
-                            
-                            if isStarted {
-                                Button(action: {
-                                    timerModel.pause()
-                                    isStarted = false
-                                }) {
-                                    Image(systemName:"pause")
-                                }.controlSize(.large)
-                                    .background(.orange, in: Capsule())
-                            } else if timerModel.isPaused {
-                                Button(action: {
-                                    timerModel.start()
-                                    isStarted = true
-                                }) {
-                                    Image(systemName:"playpause")
-                                }
-                                .controlSize(.large)
-                                .background(.green, in: Capsule())
-                            }
-                            
-                            Button(action: {
-                                timerModel.stop()
-                                isStarted = false
-                            }) {
-                                Image(systemName:"stop")
-                            }.background(.red, in: Capsule())
                         }
                     }
                 }

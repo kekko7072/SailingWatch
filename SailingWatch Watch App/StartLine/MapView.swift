@@ -16,6 +16,7 @@ struct MapView: View {
     var body: some View {
         VStack {
             Map {
+                
                 MapPolyline(coordinates: coordinates).stroke(.green, lineWidth: 8)
                 
                 ForEach(annotations) { annotation in
@@ -24,11 +25,11 @@ struct MapView: View {
                         .mapOverlayLevel(level: .aboveLabels)
                 }
                 
-                if let live = userLocation.liveLocation?.coordinate {
-                    MapCircle(center: live, radius: 10)
-                        .foregroundStyle(.yellow)
-                        .mapOverlayLevel(level: .aboveLabels)
-                }
+                
+                UserAnnotation()
+                
+            }.mapControls{
+                MapCompass()
             }
             .edgesIgnoringSafeArea(.all)
         }
