@@ -1,0 +1,131 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "%.0f m/s" : {
+
+    },
+    "%.2f m" : {
+
+    },
+    "%.2f m/s" : {
+
+    },
+    "A" : {
+
+    },
+    "B" : {
+
+    },
+    "Dismiss" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chiudi"
+          }
+        }
+      }
+    },
+    "FINISH" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "FINE"
+          }
+        }
+      }
+    },
+    "Free Trial" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prova Gratuita"
+          }
+        }
+      }
+    },
+    "Line Tracking" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tracciamento Linea"
+          }
+        }
+      }
+    },
+    "OK" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK"
+          }
+        }
+      }
+    },
+    "One time" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Una volta"
+          }
+        }
+      }
+    },
+    "Purchase Now" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Acquista Ora"
+          }
+        }
+      }
+    },
+    "READY" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PRONTO"
+          }
+        }
+      }
+    },
+    "Restore Purchases" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ripristina Acquisti"
+          }
+        }
+      }
+    },
+    "START" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "AVVIA"
+          }
+        }
+      }
+    },
+    "The Line Tracking Feature of the app is free for the first three weeks." : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Il Tracciamento Linea è una funzionalità gratuita per le prime tre settimane. "
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

@@ -6,10 +6,11 @@
 //
 
 import SwiftUI
+import StoreKit
 
 struct StoreView: View {
     @Environment(\.dismiss) var dismiss
-
+    
     @State var storeManager: StoreManager
     @State var dismissible: Bool
     
@@ -31,6 +32,9 @@ struct StoreView: View {
                     Button {
                         Task {
                             try await storeManager.purchase(product)
+                            if(dismissible){
+                                dismiss()
+                            }
                         }
                     } label: {
                         VStack {
@@ -52,6 +56,9 @@ struct StoreView: View {
                     Button {
                         Task {
                             try await storeManager.purchase(product)
+                            if(dismissible){
+                                dismiss()
+                            }
                         }
                     } label: {
                         VStack {
@@ -66,10 +73,11 @@ struct StoreView: View {
                     .buttonStyle(.borderedProminent)
                 }
                 Button(action: {
-                    Task {
-                        print(storeManager.activeTransactions.count)
-                        //TODO
-                        //await storeManager.restorePurchases()
+                    Task{
+                        await storeManager.restorePurchases()
+                        if(dismissible){
+                            dismiss()
+                        }
                     }
                 }) {
                     Text("Restore Purchases")
@@ -81,7 +89,7 @@ struct StoreView: View {
                 }
             }
         }.navigationBarHidden(true).task {
-           await storeManager.fetchProducts()
+            await storeManager.fetchProducts()
         }
     }
 }

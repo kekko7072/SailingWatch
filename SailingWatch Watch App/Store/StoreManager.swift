@@ -48,26 +48,11 @@ class StoreManager: ObservableObject {
     }
     
     func restorePurchases() async {
-        /*do {
-         let results: () = try await AppStore.sync()
-         for result in results {
-         switch result {
-         case .success(let verification):
-         switch verification {
-         case .verified(_):
-         await checkSubscriptionStatus()
-         case .unverified(_, _):
-         print("Restore not verified")
-         }
-         case .userCancelled, .pending:
-         break
-         @unknown default:
-         break
-         }
-         }
-         } catch {
-         print("Restore failed: \(error)")
-         }*/
+        do {
+            try await AppStore.sync()
+        } catch {
+            print(error)
+        }
     }
     
     func fetchActiveTransactions() async {
