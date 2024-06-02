@@ -41,11 +41,11 @@ struct StartView: View {
                     }
                     Spacer()
                     if locationManager.pointALocation != nil && locationManager.pointBLocation != nil {
-                        Button("READY"){
+                        Button("LINE"){
                             settedLine = true
                         }.buttonStyle(.borderedProminent).tint(.green).bold()
                     }else {
-                        Button("READY"){
+                        Button("LINE"){
                             WKInterfaceDevice.current().play(.failure)
                         }.foregroundStyle(.white).tint(.green)
                     }

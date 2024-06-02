@@ -46,6 +46,16 @@
         }
       }
     },
+    "LINE" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "LINEA"
+          }
+        }
+      }
+    },
     "Line Tracking" : {
       "localizations" : {
         "it" : {
@@ -82,16 +92,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Acquista Ora"
-          }
-        }
-      }
-    },
-    "READY" : {
-      "localizations" : {
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "PRONTO"
           }
         }
       }
