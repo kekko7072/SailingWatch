@@ -6,3 +6,12 @@
 //
 
 import Foundation
+import CoreLocation
+import SwiftUI
+
+struct PointAnnotation: Identifiable {
+    let id = UUID()
+    let coordinate: CLLocationCoordinate2D
+    let tint: Color
+    let title: String?
+}

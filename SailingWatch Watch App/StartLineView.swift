@@ -9,6 +9,7 @@ import SwiftUI
 
 struct StartView: View {
     @StateObject var locationManager = LocationManager()
+    @StateObject private var networkMonitor = NetworkMonitor()
     
     @State var settedLine = false
     @State var settedPointA = false
@@ -58,18 +59,24 @@ struct StartView: View {
             } else {
                 
                 VStack {
-                    MapView(userLocation: locationManager)
-                        .scaledToFill()
-                        .cornerRadius(10).disabled(true)
+                    if networkMonitor.isConnected {
+                        MapView(userLocation: locationManager)
+                            .scaledToFill()
+                            .cornerRadius(10).disabled(true)
+                    } else {
+                        PositionView(userLocation: locationManager)
+                            .scaledToFill()
+                            .cornerRadius(10)
+                    }
                 }.toolbar {
                     if let speed = locationManager.liveLocation?.speed {
                         ToolbarItem(placement: .topBarLeading) {
                             Text("\(speed, specifier: "%.2f") m/s").padding().background(.teal).cornerRadius(10)
                         }
                     }
-                        ToolbarItem(placement: .topBarTrailing) {
-                            Text("\(locationManager.calculateDistanceFromLine(), specifier: "%.2f") m").foregroundStyle(.black).padding().background(.yellow).cornerRadius(10)
-                        }
+                    ToolbarItem(placement: .topBarTrailing) {
+                        Text("\(locationManager.calculateDistanceFromLine(), specifier: "%.2f") m").foregroundStyle(.black).padding().background(.yellow).cornerRadius(10)
+                    }
                     
                     
                     
