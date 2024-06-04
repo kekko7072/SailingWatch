@@ -7,57 +7,16 @@
 
 import SwiftUI
 
-struct StartView: View {
-    @StateObject var locationManager = LocationManager()
+struct StartLineMapView: View {
+    @ObservedObject var locationManager: LocationManager
     @StateObject private var networkMonitor = NetworkMonitor()
     
-    @State var settedLine = false
-    @State var settedPointA = false
-    @State var settedPointB = false
     
     var body: some View {
         NavigationStack {
-            if !settedLine {
-                VStack {
-                    Spacer()
-                    HStack {
-                        if locationManager.pointALocation != nil {
-                            Button("A"){
-                                locationManager.pointALocation = locationManager.getCurrentLocation()
-                            }.buttonStyle(.borderedProminent).tint(.orange)
-                        } else {
-                            Button("A"){
-                                locationManager.pointALocation = locationManager.getCurrentLocation()
-                            }.foregroundStyle(.white).tint(.orange)
-                        }
-                        if locationManager.pointBLocation != nil {
-                            Button("B"){
-                                locationManager.pointBLocation = locationManager.getCurrentLocation()
-                            }.buttonStyle(.borderedProminent).tint(.red)
-                        } else {
-                            Button("B"){
-                                locationManager.pointBLocation = locationManager.getCurrentLocation()
-                            }.foregroundStyle(.white).tint(.red)
-                        }
-                    }
-                    Spacer()
-                    if locationManager.pointALocation != nil && locationManager.pointBLocation != nil {
-                        Button("LINE"){
-                            settedLine = true
-                        }.buttonStyle(.borderedProminent).tint(.green).bold()
-                    }else {
-                        Button("LINE"){
-                            WKInterfaceDevice.current().play(.failure)
-                        }.foregroundStyle(.white).tint(.green)
-                    }
-                    Spacer()
-                }.font(.title2).foregroundStyle(.black).bold().onAppear {
-                    locationManager.requestAuthorization()
-                }.onReceive(locationManager.$liveLocation, perform: { _ in
-                    print(locationManager.liveLocation ?? "")
-                })
+            if !locationManager.lineConfigured {
+                SetView(locationManager: locationManager)
             } else {
-                
                 VStack {
                     if networkMonitor.isConnected {
                         MapView(userLocation: locationManager)
@@ -90,7 +49,6 @@ struct StartView: View {
                         Button(action: {
                             WKInterfaceDevice.current().play(.failure)
                             locationManager.lineToSet()
-                            settedLine = false
                         }) {
                             Image(systemName:"xmark")
                         }
@@ -111,5 +69,5 @@ struct StartView: View {
 }
 
 #Preview {
-    StartView().environmentObject(LocationManager())
+    StartLineMapView(locationManager: LocationManager())
 }

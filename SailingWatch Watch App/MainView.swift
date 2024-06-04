@@ -10,7 +10,9 @@ import SwiftUI
 struct MainView: View {
     @AppStorage("firstOpeningTimestamp") var firstOpeningTimestamp: Double?
     
+    @ObservedObject var locationManager: LocationManager
     @ObservedObject var storeManager: StoreManager
+    
     @State private var showAlert = false
     @State private var showStoreSheet = false
     
@@ -19,7 +21,7 @@ struct MainView: View {
             TimerView()
             ZStack{
                 if !showAlert{
-                    StartView()
+                    StartLineDataView(locationManager: locationManager)
                 } else {
                     StoreView(storeManager: storeManager)
                 }
@@ -32,6 +34,9 @@ struct MainView: View {
                     }),
                     secondaryButton: .default(Text("OK"))
                 )
+            }
+            if(locationManager.lineConfigured){
+                StartLineMapView(locationManager: locationManager)
             }
         }
         .tabViewStyle(PageTabViewStyle()).onAppear(perform: checkForAlert).sheet(isPresented: $showStoreSheet, content: {
@@ -60,5 +65,5 @@ struct MainView: View {
 }
 
 #Preview {
-    MainView(storeManager: StoreManager())
+    MainView(locationManager: LocationManager(), storeManager: StoreManager())
 }

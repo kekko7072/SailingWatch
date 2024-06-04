@@ -17,6 +17,8 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     @Published var pointALocation: CLLocation?
     @Published var pointBLocation: CLLocation?
     @Published var liveLocation: CLLocation?
+    
+    @Published var lineConfigured: Bool = false
 
     override init() {
         super.init()
@@ -56,9 +58,15 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
             print("unknown")
         }
     }
+    
+    /// Reset the locations for point A and point B.
+    func lineSet() {
+        lineConfigured = true
+    }
 
     /// Reset the locations for point A and point B.
     func lineToSet() {
+        lineConfigured = false
         pointALocation = nil
         pointBLocation = nil
     }

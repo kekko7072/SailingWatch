@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CoreLocation
 
 struct PositionView: View {
     @StateObject var userLocation = LocationManager()
@@ -15,8 +16,7 @@ struct PositionView: View {
             ZStack {
                 // Draw line connecting points
                 if userLocation.pointALocation != nil && userLocation.pointBLocation != nil {
-                    let points = [userLocation.pointALocation!.coordinate, userLocation.pointBLocation!.coordinate]
-                    LineView(points: points)
+                    LineView(points: [userLocation.pointALocation!.coordinate, userLocation.pointBLocation!.coordinate], size: geometry.size)
                         .stroke(Color.green, lineWidth: 8)
                 }
                 
@@ -44,31 +44,42 @@ struct PositionView: View {
     }
     
     private func convertCoordinateToCGPoint(coordinate: CLLocationCoordinate2D, in size: CGSize) -> CGPoint {
-        // Convert coordinate to CGPoint. This method will depend on how you want to map your coordinates to the view.
-        // For simplicity, let's assume the coordinates are normalized between 0 and 1.
-        let x = CGFloat((coordinate.latitude + 90) / 180) * size.width
-        let y = CGFloat((coordinate.longitude + 180) / 360) * size.height
+        // Assuming the coordinates are normalized between the two points
+        guard let minLat = userLocation.pointALocation?.coordinate.latitude,
+              let maxLat = userLocation.pointBLocation?.coordinate.latitude,
+              let minLon = userLocation.pointALocation?.coordinate.longitude,
+              let maxLon = userLocation.pointBLocation?.coordinate.longitude else {
+            return .zero
+        }
+        
+        let latitudeSpan = maxLat - minLat
+        let longitudeSpan = maxLon - minLon
+        
+        let x = (coordinate.latitude - minLat) / latitudeSpan * size.width
+        let y = (coordinate.longitude - minLon) / longitudeSpan * size.height
+        
         return CGPoint(x: x, y: y)
     }
 }
 
 struct LineView: Shape {
     var points: [CLLocationCoordinate2D]
+    var size: CGSize
     
     func path(in rect: CGRect) -> Path {
         var path = Path()
         guard points.count > 1 else { return path }
         
         let startPoint = CGPoint(
-            x: CGFloat((points[0].latitude + 90) / 180) * rect.width,
-            y: CGFloat((points[0].longitude + 180) / 360) * rect.height
+            x: CGFloat((points[0].latitude - points.map { $0.latitude }.min()!) / (points.map { $0.latitude }.max()! - points.map { $0.latitude }.min()!)) * size.width,
+            y: CGFloat((points[0].longitude - points.map { $0.longitude }.min()!) / (points.map { $0.longitude }.max()! - points.map { $0.longitude }.min()!)) * size.height
         )
         path.move(to: startPoint)
         
         for point in points {
             let cgPoint = CGPoint(
-                x: CGFloat((point.latitude + 90) / 180) * rect.width,
-                y: CGFloat((point.longitude + 180) / 360) * rect.height
+                x: CGFloat((point.latitude - points.map { $0.latitude }.min()!) / (points.map { $0.latitude }.max()! - points.map { $0.latitude }.min()!)) * size.width,
+                y: CGFloat((point.longitude - points.map { $0.longitude }.min()!) / (points.map { $0.longitude }.max()! - points.map { $0.longitude }.min()!)) * size.height
             )
             path.addLine(to: cgPoint)
         }
@@ -80,4 +91,3 @@ struct LineView: Shape {
 #Preview {
     PositionView()
 }
-

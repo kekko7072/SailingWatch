@@ -21,10 +21,11 @@ struct SailingWatch_Watch_AppApp: App {
     }
     
     @StateObject var storeManager = StoreManager()
+    @StateObject var locationManager = LocationManager()
     
     var body: some Scene {
         WindowGroup {
-            MainView(storeManager: storeManager)
+            MainView(locationManager: locationManager, storeManager: storeManager)
         }
     }
 }
