@@ -10,6 +10,8 @@ import WatchKit
 import HealthKit
 
 struct TimerView: View {
+    @ObservedObject var locationManager: LocationManager
+    
     @StateObject private var timerModel = TimerModel()
     @State private var isStarted = false
     @State private var selectedDuration = CountdownTime.fiveMinutes
@@ -80,13 +82,21 @@ struct TimerView: View {
                 }
             }.toolbar {
                 ToolbarItem(placement: .topBarLeading) {
-                    Text("\(timerModel.speed, specifier: "%.0f") m/s")
+                    if(locationManager.lineConfigured){
+                        Text("\(locationManager.calculateDistanceFromLine()/timerModel.speed, specifier: "%.0f") m/s")
+                    }else{
+                        Text("\(timerModel.speed, specifier: "%.0f") m/s")
+                    }
                 }
                 if isStarted || timerModel.isPaused {
                     ToolbarItem(placement: .topBarTrailing) {
-                        HStack{
-                            Text(String(format: "%.0f", timerModel.heartRate))
-                            Image(systemName: "heart")
+                        if(locationManager.lineConfigured){
+                            Text("\(locationManager.calculateDistanceFromLine(), specifier: "%.0f") m")
+                        }else{
+                            HStack{
+                                Text(String(format: "%.0f", timerModel.heartRate))
+                                Image(systemName: "heart")
+                            }
                         }
                     }
                 }
@@ -99,5 +109,5 @@ struct TimerView: View {
 }
 
 #Preview {
-    TimerView()
+    TimerView(locationManager: LocationManager())
 }

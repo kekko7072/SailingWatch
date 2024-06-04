@@ -18,7 +18,7 @@ struct MainView: View {
     
     var body: some View {
         TabView {
-            TimerView()
+            TimerView(locationManager: locationManager)
             ZStack{
                 if !showAlert{
                     StartLineDataView(locationManager: locationManager)

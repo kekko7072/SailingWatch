@@ -43,23 +43,23 @@ struct StartLineMapView: View {
                         Button {
                             locationManager.pointALocation = locationManager.getCurrentLocation()
                         } label: {
-                            Text("A")
-                        }.background(.orange, in: Capsule())
+                            Text("A").foregroundStyle(.black)
+                        }.background(.orange, in: Capsule()).tint(.orange)
                         
                         Button(action: {
                             WKInterfaceDevice.current().play(.failure)
                             locationManager.lineToSet()
                         }) {
-                            Image(systemName:"xmark")
+                            Image(systemName:"xmark").foregroundStyle(.black)
                         }
                         .controlSize(.large)
-                        .background(.green, in: Capsule())
+                        .background(.green, in: Capsule()).tint(.green)
                         
                         Button {
                             locationManager.pointBLocation = locationManager.getCurrentLocation()
                         } label: {
-                            Text("B")
-                        }.background(.red, in: Capsule())
+                            Text("B").foregroundStyle(.black)
+                        }.background(.red, in: Capsule()).tint(.red)
                     }
                 }
             }
