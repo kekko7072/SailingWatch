@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BF60D3B52C0B8371001834E6 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF60D3B42C0B8371001834E6 /* StoreKit.framework */; };
 		BF60D3B72C0B8F4C001834E6 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF60D3B62C0B8F4C001834E6 /* MainView.swift */; };
 		BF65BF552C08C37900FA9193 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF65BF542C08C37900FA9193 /* TimerView.swift */; };
 		BF65BF572C08C39400FA9193 /* TimerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF65BF562C08C39400FA9193 /* TimerModel.swift */; };
@@ -22,6 +21,7 @@
 		BFC9345F2C0B020A0081C025 /* CountdownTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC9345E2C0B020A0081C025 /* CountdownTime.swift */; };
 		BFCAAC832C0F46C3004A6B43 /* SetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCAAC822C0F46C3004A6B43 /* SetView.swift */; };
 		BFCAAC852C0F476D004A6B43 /* StartLineDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCAAC842C0F476D004A6B43 /* StartLineDataView.swift */; };
+		BFCAAC862C0F508E004A6B43 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF60D3B42C0B8371001834E6 /* StoreKit.framework */; };
 		BFD934AA2C0CCFD600850E4F /* PointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD934A92C0CCFD600850E4F /* PointAnnotation.swift */; };
 		BFD934AC2C0CD0C400850E4F /* PositionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD934AB2C0CD0C400850E4F /* PositionView.swift */; };
 		BFD934AE2C0CD1C700850E4F /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD934AD2C0CD1C700850E4F /* NetworkMonitor.swift */; };
@@ -94,7 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF60D3B52C0B8371001834E6 /* StoreKit.framework in Frameworks */,
+				BFCAAC862C0F508E004A6B43 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -443,7 +443,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "SailingWatch Watch App/SailingWatch Watch App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 15;
 				DEVELOPMENT_ASSET_PATHS = "\"SailingWatch Watch App/Preview Content\"";
 				DEVELOPMENT_TEAM = P8WULW25UZ;
 				ENABLE_PREVIEWS = YES;
@@ -479,7 +479,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "SailingWatch Watch App/SailingWatch Watch App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 15;
 				DEVELOPMENT_ASSET_PATHS = "\"SailingWatch Watch App/Preview Content\"";
 				DEVELOPMENT_TEAM = P8WULW25UZ;
 				ENABLE_PREVIEWS = YES;
@@ -515,10 +515,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 15;
 				DEVELOPMENT_TEAM = P8WULW25UZ;
 				INFOPLIST_KEY_CFBundleDisplayName = SailingWatch;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = francesco.vezzani.SailingWatch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -533,10 +533,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 15;
 				DEVELOPMENT_TEAM = P8WULW25UZ;
 				INFOPLIST_KEY_CFBundleDisplayName = SailingWatch;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = francesco.vezzani.SailingWatch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
