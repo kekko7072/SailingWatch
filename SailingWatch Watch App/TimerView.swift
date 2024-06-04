@@ -83,7 +83,7 @@ struct TimerView: View {
             }.toolbar {
                 ToolbarItem(placement: .topBarLeading) {
                     if(locationManager.lineConfigured){
-                        Text("\(locationManager.calculateDistanceFromLine()/timerModel.speed, specifier: "%.0f") m/s")
+                        Text("\(locationManager.calculateDistanceFromLine()/timerModel.speed, specifier: "%.0f") s")
                     }else{
                         Text("\(timerModel.speed, specifier: "%.0f") m/s")
                     }
