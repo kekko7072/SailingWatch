@@ -15,7 +15,7 @@ struct StartLineMapView: View {
     var body: some View {
         NavigationStack {
             if !locationManager.lineConfigured {
-                SetView(locationManager: locationManager)
+                SetLineView(locationManager: locationManager)
             } else {
                 VStack {
                     if networkMonitor.isConnected {
@@ -43,7 +43,7 @@ struct StartLineMapView: View {
                         Button {
                             locationManager.pointALocation = locationManager.getCurrentLocation()
                         } label: {
-                            Text("A").foregroundStyle(.black)
+                            Image(systemName: "sailboat").foregroundStyle(.black)
                         }.background(.orange, in: Capsule()).tint(.orange)
                         
                         Button(action: {
@@ -53,13 +53,13 @@ struct StartLineMapView: View {
                             Image(systemName:"xmark").foregroundStyle(.black)
                         }
                         .controlSize(.large)
-                        .background(.green, in: Capsule()).tint(.green)
+                        .background(.red, in: Capsule()).tint(.red)
                         
                         Button {
                             locationManager.pointBLocation = locationManager.getCurrentLocation()
                         } label: {
-                            Text("B").foregroundStyle(.black)
-                        }.background(.red, in: Capsule()).tint(.red)
+                            Image(systemName: "flag.fill").foregroundStyle(.black)
+                        }.background(.red, in: Capsule()).tint(.yellow)
                     }
                 }
             }

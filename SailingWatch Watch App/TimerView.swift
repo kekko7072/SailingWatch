@@ -38,26 +38,26 @@ struct TimerView: View {
                                     timerModel.stop()
                                     isStarted = false
                                 }) {
-                                    Image(systemName: "stop").bold().foregroundStyle(.black)
+                                    Image(systemName: "stop")
                                 }.buttonStyle(.borderedProminent).tint(.red)
                                 Button(action: {
                                     timerModel.start()
                                 }) {
-                                    Image(systemName: "play").bold().foregroundStyle(.black)
+                                    Image(systemName: "play")
                                 }.buttonStyle(.borderedProminent).tint(.green)
                             }else{
                                 Button(action: {
                                     timerModel.syncToNextInterval()
                                 }) {
-                                    Image(systemName: "arrow.triangle.2.circlepath").bold().foregroundStyle(.black)
+                                    Image(systemName: "arrow.triangle.2.circlepath")
                                 }.buttonStyle(.borderedProminent).tint(.blue)
                                 Button(action: {
                                     timerModel.pause()
                                 }) {
-                                    Image(systemName: "pause").bold().foregroundStyle(.black)
+                                    Image(systemName: "pause")
                                 }.buttonStyle(.borderedProminent).tint(.orange)
                             }
-                        }
+                        }.foregroundStyle(.black).font(.title2).bold()
                     }
                 }else{
                     Picker(selection: $selectedDuration, label: EmptyView()) {

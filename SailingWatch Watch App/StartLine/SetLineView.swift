@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SetView: View {
+struct SetLineView: View {
     @StateObject var locationManager: LocationManager
 
     var body: some View {
@@ -15,22 +15,30 @@ struct SetView: View {
             Spacer()
             HStack {
                 if locationManager.pointALocation != nil {
-                    Button("A"){
+                    Button{
                         locationManager.pointALocation = locationManager.getCurrentLocation()
+                    }label: {
+                        Image(systemName: "sailboat")
                     }.buttonStyle(.borderedProminent).tint(.orange)
                 } else {
-                    Button("A"){
+                    Button{
                         locationManager.pointALocation = locationManager.getCurrentLocation()
+                    }label: {
+                        Image(systemName: "sailboat")
                     }.foregroundStyle(.white).tint(.orange)
                 }
                 if locationManager.pointBLocation != nil {
-                    Button("B"){
+                    Button {
                         locationManager.pointBLocation = locationManager.getCurrentLocation()
-                    }.buttonStyle(.borderedProminent).tint(.red)
+                    } label: {
+                        Image(systemName: "flag.fill")
+                    }.buttonStyle(.borderedProminent).tint(.yellow)
                 } else {
-                    Button("B"){
+                    Button {
                         locationManager.pointBLocation = locationManager.getCurrentLocation()
-                    }.foregroundStyle(.white).tint(.red)
+                    } label: {
+                        Image(systemName: "flag.fill")
+                    }.foregroundStyle(.white).tint(.yellow)
                 }
             }
             Spacer()
@@ -53,5 +61,5 @@ struct SetView: View {
 }
 
 #Preview {
-    SetView(locationManager: LocationManager())
+    SetLineView(locationManager: LocationManager())
 }
