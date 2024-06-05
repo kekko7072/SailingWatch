@@ -21,8 +21,7 @@ struct StoreView: View {
     
     var body: some View {
         ScrollView {
-            Text("Line Tracking")
-                .bold()
+            Text("Line Tracking").bold()
             if storeManager.products.isEmpty {
                 ProgressView().padding()
             }else{
@@ -48,8 +47,7 @@ struct StoreView: View {
                     }
                     .buttonStyle(.borderedProminent)
                 }
-                Spacer()
-                Text("One time")
+                Text("One time purchase").padding(.top, 10)
                 ForEach(storeManager.products.filter({ product in
                     product.type == .nonConsumable
                 }), id: \.id) { product in

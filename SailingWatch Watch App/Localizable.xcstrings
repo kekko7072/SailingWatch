@@ -21,6 +21,18 @@
     },
     "Dismiss" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stornieren"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Annuler"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -31,6 +43,18 @@
     },
     "FINISH" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "BEENDEN"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "FINITION"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -41,6 +65,18 @@
     },
     "Free Trial" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kostenlose Testphase"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Essai Gratuit"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -51,6 +87,18 @@
     },
     "LINE" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "LINIE"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DOUBLER"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -61,6 +109,18 @@
     },
     "Line Tracking" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Linienverfolgung"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suivi de ligne"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -71,6 +131,18 @@
     },
     "OK" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "D'ACCORD"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -79,18 +151,42 @@
         }
       }
     },
-    "One time" : {
+    "One time purchase" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Einmaliger kauf"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Achat en un click"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Una volta"
+            "value" : "Acquista una volta"
           }
         }
       }
     },
     "Purchase Now" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jetzt kaufen"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Achetez maintenant"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -101,6 +197,18 @@
     },
     "Restore Purchases" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Einkäufe wiederherstellen"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Restaurer les achats"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -111,6 +219,18 @@
     },
     "START" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "START"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PARTIR"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -121,6 +241,18 @@
     },
     "The Line Tracking Feature of the app is free for the first three weeks." : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Die Line-Tracking-Funktion der App ist in den ersten drei Wochen kostenlos."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La fonction de suivi de ligne de l'application est gratuite pendant les trois premières semaines."
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
