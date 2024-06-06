@@ -25,7 +25,7 @@ struct SetLineView: View {
                         locationManager.pointALocation = locationManager.getCurrentLocation()
                     }label: {
                         Image(systemName: "sailboat")
-                    }.foregroundStyle(.white).tint(.orange)
+                    }.foregroundStyle(.orange).tint(.orange)
                 }
                 if locationManager.pointBLocation != nil {
                     Button {
@@ -38,7 +38,7 @@ struct SetLineView: View {
                         locationManager.pointBLocation = locationManager.getCurrentLocation()
                     } label: {
                         Image(systemName: "flag.fill")
-                    }.foregroundStyle(.white).tint(.yellow)
+                    }.foregroundStyle(.yellow).tint(.yellow)
                 }
             }
             Spacer()

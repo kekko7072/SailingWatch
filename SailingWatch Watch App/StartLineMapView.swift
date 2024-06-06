@@ -18,15 +18,9 @@ struct StartLineMapView: View {
                 SetLineView(locationManager: locationManager)
             } else {
                 VStack {
-                    if networkMonitor.isConnected {
-                        MapView(userLocation: locationManager)
-                            .scaledToFill()
-                            .cornerRadius(10).disabled(true)
-                    } else {
-                        PositionView(userLocation: locationManager)
-                            .scaledToFill()
-                            .cornerRadius(10)
-                    }
+                    MapView(userLocation: locationManager)
+                        .scaledToFill()
+                        .cornerRadius(10).disabled(true)
                 }.toolbar {
                     if let speed = locationManager.liveLocation?.speed {
                         ToolbarItem(placement: .topBarLeading) {

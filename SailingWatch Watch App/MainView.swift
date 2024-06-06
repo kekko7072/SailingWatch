@@ -13,6 +13,7 @@ struct MainView: View {
     @ObservedObject var locationManager: LocationManager
     @ObservedObject var storeManager: StoreManager
     
+    @StateObject private var networkMonitor = NetworkMonitor()
     @State private var showAlert = false
     @State private var showStoreSheet = false
     
@@ -35,7 +36,7 @@ struct MainView: View {
                     secondaryButton: .default(Text("OK"))
                 )
             }
-            if(locationManager.lineConfigured){
+            if(locationManager.lineConfigured && networkMonitor.isConnected){
                 StartLineMapView(locationManager: locationManager)
             }
         }
