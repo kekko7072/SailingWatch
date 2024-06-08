@@ -27,6 +27,12 @@
             "value" : "Stornieren"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Despedir"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -38,6 +44,12 @@
             "state" : "translated",
             "value" : "Chiudi"
           }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Liberar"
+          }
         }
       }
     },
@@ -47,6 +59,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "BEENDEN"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "FINALIZAR"
           }
         },
         "fr" : {
@@ -60,6 +78,12 @@
             "state" : "translated",
             "value" : "FINE"
           }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TERMINAR"
+          }
         }
       }
     },
@@ -69,6 +93,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kostenlose Testphase"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prueba gratis"
           }
         },
         "fr" : {
@@ -82,6 +112,12 @@
             "state" : "translated",
             "value" : "Prova Gratuita"
           }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Teste grátis"
+          }
         }
       }
     },
@@ -91,6 +127,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "LINIE"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "LÍNEA"
           }
         },
         "fr" : {
@@ -104,6 +146,12 @@
             "state" : "translated",
             "value" : "LINEA"
           }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "LINHA"
+          }
         }
       }
     },
@@ -113,6 +161,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Linienverfolgung"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seguimiento de línea"
           }
         },
         "fr" : {
@@ -126,12 +180,24 @@
             "state" : "translated",
             "value" : "Tracciamento Linea"
           }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rastreamento de linha"
+          }
         }
       }
     },
     "OK" : {
       "localizations" : {
         "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "OK"
@@ -148,6 +214,12 @@
             "state" : "translated",
             "value" : "OK"
           }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK"
+          }
         }
       }
     },
@@ -157,6 +229,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Einmaliger kauf"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Compra única"
           }
         },
         "fr" : {
@@ -170,6 +248,12 @@
             "state" : "translated",
             "value" : "Acquista una volta"
           }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Compra de uma só vez"
+          }
         }
       }
     },
@@ -179,6 +263,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Jetzt kaufen"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Comprar Ahora"
           }
         },
         "fr" : {
@@ -192,6 +282,12 @@
             "state" : "translated",
             "value" : "Acquista Ora"
           }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Compre agora"
+          }
         }
       }
     },
@@ -201,6 +297,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Einkäufe wiederherstellen"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Restaurar las compras"
           }
         },
         "fr" : {
@@ -214,6 +316,12 @@
             "state" : "translated",
             "value" : "Ripristina Acquisti"
           }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Restaurar compras"
+          }
         }
       }
     },
@@ -223,6 +331,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "START"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "COMENZAR"
           }
         },
         "fr" : {
@@ -236,6 +350,12 @@
             "state" : "translated",
             "value" : "AVVIA"
           }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "COMEÇAR"
+          }
         }
       }
     },
@@ -245,6 +365,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Die Line-Tracking-Funktion der App ist in den ersten drei Wochen kostenlos."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La función de seguimiento de línea de la aplicación es gratuita durante las primeras tres semanas."
           }
         },
         "fr" : {
@@ -257,6 +383,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Il Tracciamento Linea è una funzionalità gratuita per le prime tre settimane. "
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O recurso Line Tracking do aplicativo é gratuito durante as primeiras três semanas."
           }
         }
       }
