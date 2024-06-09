@@ -213,11 +213,18 @@ class TimerModel: NSObject, ObservableObject, HKWorkoutSessionDelegate, HKLiveWo
     
     private func checkFeedback(for remainingTime: TimeInterval) {
         if let interval = soundIntervals.first(where: { $0.time == Int(remainingTime) }) {
+            
+            /// Play sound or haptic
             switch interval.feedback {
             case .audio(let audioType):
                 playAudio(for: audioType)
             case .haptic(let hapticType):
                 playHaptic(for: hapticType)
+            }
+            
+            ///Enable water lock
+            if(interval.enableWaterLock){
+                WKInterfaceDevice.current().enableWaterLock()
             }
         }
     }

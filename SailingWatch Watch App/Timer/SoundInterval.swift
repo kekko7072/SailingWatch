@@ -21,8 +21,9 @@ enum FeedbackType {
 class SoundInterval {
     var time: Int
     var feedback: FeedbackType
+    var enableWaterLock: Bool
     
-    init(time: Int, feedback: FeedbackType) {
+    init(time: Int, feedback: FeedbackType, enableWaterLock:Bool = false) {
         self.feedback = feedback
         
         switch feedback {
@@ -33,6 +34,8 @@ class SoundInterval {
         case .haptic:
             self.time = time
         }
+        
+        self.enableWaterLock = enableWaterLock
     }
     
     public func toTime() -> TimeInterval {
@@ -84,5 +87,5 @@ let soundIntervals: [SoundInterval] = [
     SoundInterval(time: -12, feedback: .haptic(.failure)),
     SoundInterval(time: -13, feedback: .haptic(.failure)),
     SoundInterval(time: -14, feedback: .haptic(.failure)),
-    SoundInterval(time: -15, feedback: .haptic(.failure)),
+    SoundInterval(time: -15, feedback: .haptic(.failure), enableWaterLock: true),
 ]
