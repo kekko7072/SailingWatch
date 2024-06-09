@@ -25,29 +25,7 @@ struct StoreView: View {
             if storeManager.products.isEmpty {
                 ProgressView().padding()
             }else{
-                ForEach(storeManager.products.filter({ product in
-                    product.type == .autoRenewable
-                }), id: \.id) { product in
-                    Button {
-                        Task {
-                            try await storeManager.purchase(product)
-                            if(dismissible){
-                                dismiss()
-                            }
-                        }
-                    } label: {
-                        VStack {
-                            Text(verbatim: product.displayName)
-                                .font(.headline)
-                            HStack{
-                                Text(verbatim: product.description)
-                                Text(verbatim: product.displayPrice)
-                            }
-                        }
-                    }
-                    .buttonStyle(.borderedProminent)
-                }
-                Text("One time purchase").padding(.top, 10)
+                Text("One time purchase").padding(.top, 5)
                 ForEach(storeManager.products.filter({ product in
                     product.type == .nonConsumable
                 }), id: \.id) { product in
@@ -70,6 +48,31 @@ struct StoreView: View {
                     }
                     .buttonStyle(.borderedProminent)
                 }
+                
+                Text("Subscription purchase").padding(.top, 10)
+                ForEach(storeManager.products.filter({ product in
+                    product.type == .autoRenewable
+                }), id: \.id) { product in
+                    Button {
+                        Task {
+                            try await storeManager.purchase(product)
+                            if(dismissible){
+                                dismiss()
+                            }
+                        }
+                    } label: {
+                        VStack {
+                            Text(verbatim: product.displayName)
+                                .font(.headline)
+                            HStack{
+                                Text(verbatim: product.description)
+                                Text(verbatim: product.displayPrice)
+                            }
+                        }
+                    }
+                    .buttonStyle(.borderedProminent)
+                }
+                
                 Button(action: {
                     Task{
                         await storeManager.restorePurchases()
