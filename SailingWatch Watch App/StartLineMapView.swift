@@ -53,7 +53,7 @@ struct StartLineMapView: View {
                             locationManager.pointBLocation = locationManager.getCurrentLocation()
                         } label: {
                             Image(systemName: "flag.fill").foregroundStyle(.black)
-                        }.background(.red, in: Capsule()).tint(.yellow)
+                        }.background(.yellow, in: Capsule()).tint(.yellow)
                     }
                 }
             }
