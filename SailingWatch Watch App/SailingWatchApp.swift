@@ -7,6 +7,7 @@
 
 import SwiftUI
 import WatchKit
+import TipKit
 
 @main
 struct SailingWatch_Watch_AppApp: App {
@@ -18,6 +19,8 @@ struct SailingWatch_Watch_AppApp: App {
         if firstOpeningTimestamp == nil {
             firstOpeningTimestamp = Date().timeIntervalSince1970
         }
+        // Configure Tip's data container
+        try? Tips.configure()
     }
     
     @StateObject var storeManager = StoreManager()

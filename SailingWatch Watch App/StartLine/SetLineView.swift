@@ -6,13 +6,19 @@
 //
 
 import SwiftUI
+import TipKit
 
 struct SetLineView: View {
     @StateObject var locationManager: LocationManager
-
+    
+    var  tipSetPointAB = TipSetPointAB()
+    var  tipSetLine = TipSetLine()
+    
+    
     var body: some View {
         VStack {
             Spacer()
+            TipView(tipSetPointAB, arrowEdge: .bottom).tipViewStyle(MyTipStyle())
             HStack {
                 if locationManager.pointALocation != nil {
                     Button{
@@ -42,6 +48,7 @@ struct SetLineView: View {
                 }
             }
             Spacer()
+            TipView(tipSetLine, arrowEdge: .bottom).tipViewStyle(MyTipStyle())
             if locationManager.pointALocation != nil && locationManager.pointBLocation != nil {
                 Button("LINE"){
                     locationManager.lineSet()
@@ -56,7 +63,13 @@ struct SetLineView: View {
             locationManager.requestAuthorization()
         }.onReceive(locationManager.$liveLocation, perform: { _ in
             print(locationManager.liveLocation ?? "")
-        })
+        }).task {
+            // Configure and load your tips at app launch.
+            try? Tips.configure([
+                .displayFrequency(.immediate),
+                .datastoreLocation(.applicationDefault)
+            ])
+        }
     }
 }
 

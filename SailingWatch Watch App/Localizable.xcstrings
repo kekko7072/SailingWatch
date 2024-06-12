@@ -257,6 +257,12 @@
         }
       }
     },
+    "Press the button LINE to start getting the data from the setted line." : {
+
+    },
+    "Press the buttons of boat and flag to set line position." : {
+
+    },
     "Purchase Now" : {
       "localizations" : {
         "de" : {
@@ -291,6 +297,9 @@
         }
       }
     },
+    "Ready? Get line data" : {
+
+    },
     "Restore Purchases" : {
       "localizations" : {
         "de" : {
@@ -324,6 +333,9 @@
           }
         }
       }
+    },
+    "Set point of line" : {
+
     },
     "START" : {
       "localizations" : {

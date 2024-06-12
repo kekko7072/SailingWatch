@@ -57,7 +57,7 @@ struct MainView: View {
             let components = calendar.dateComponents([.weekOfYear], from: firstDate, to: currentDate)
             
             if let weeks = components.weekOfYear {
-                if weeks >= 1 && weeks < 3 {
+                if weeks >= 0 && weeks < 3 {
                     showAlert = true
                 }
             }

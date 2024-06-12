@@ -17,6 +17,7 @@
 		BF7664FD2C0B6D61008A0B1A /* SailingWatch.storekit in Resources */ = {isa = PBXBuildFile; fileRef = BF7664FC2C0B6D61008A0B1A /* SailingWatch.storekit */; };
 		BF7664FF2C0B6E82008A0B1A /* StoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7664FE2C0B6E82008A0B1A /* StoreView.swift */; };
 		BF807C5A2C0BB3FF002F837C /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = BF807C592C0BB3FF002F837C /* Localizable.xcstrings */; };
+		BFB8258C2C1A3EC100F95163 /* TipKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB8258B2C1A3EC100F95163 /* TipKit.swift */; };
 		BFC9345D2C0AFF1B0081C025 /* SoundInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC9345C2C0AFF1B0081C025 /* SoundInterval.swift */; };
 		BFC9345F2C0B020A0081C025 /* CountdownTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC9345E2C0B020A0081C025 /* CountdownTime.swift */; };
 		BFCAAC832C0F46C3004A6B43 /* SetLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCAAC822C0F46C3004A6B43 /* SetLineView.swift */; };
@@ -70,6 +71,7 @@
 		BF7664FC2C0B6D61008A0B1A /* SailingWatch.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = SailingWatch.storekit; sourceTree = "<group>"; };
 		BF7664FE2C0B6E82008A0B1A /* StoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreView.swift; sourceTree = "<group>"; };
 		BF807C592C0BB3FF002F837C /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		BFB8258B2C1A3EC100F95163 /* TipKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipKit.swift; sourceTree = "<group>"; };
 		BFC9345C2C0AFF1B0081C025 /* SoundInterval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundInterval.swift; sourceTree = "<group>"; };
 		BFC9345E2C0B020A0081C025 /* CountdownTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownTime.swift; sourceTree = "<group>"; };
 		BFCAAC822C0F46C3004A6B43 /* SetLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetLineView.swift; sourceTree = "<group>"; };
@@ -117,6 +119,15 @@
 			path = Store;
 			sourceTree = "<group>";
 		};
+		BFB8258A2C1A3EA400F95163 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				BFB8258B2C1A3EC100F95163 /* TipKit.swift */,
+				BFD934AD2C0CD1C700850E4F /* NetworkMonitor.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		BFD9476C2AED4B5400BCA3ED = {
 			isa = PBXGroup;
 			children = (
@@ -147,6 +158,7 @@
 				BFD947C42AED4DF200BCA3ED /* Timer */,
 				BFD947B82AED4D9F00BCA3ED /* StartLine */,
 				BF7664F92C0B6C10008A0B1A /* Store */,
+				BFB8258A2C1A3EA400F95163 /* Common */,
 				BF7664FC2C0B6D61008A0B1A /* SailingWatch.storekit */,
 				BF807C592C0BB3FF002F837C /* Localizable.xcstrings */,
 				BFD947A62AED4CC200BCA3ED /* SailingWatch-Watch-App-Info.plist */,
@@ -162,7 +174,6 @@
 			isa = PBXGroup;
 			children = (
 				BFD947B12AED4D5700BCA3ED /* LocationManager.swift */,
-				BFD934AD2C0CD1C700850E4F /* NetworkMonitor.swift */,
 				BFD947BA2AED4DAE00BCA3ED /* MapView.swift */,
 				BFCAAC822C0F46C3004A6B43 /* SetLineView.swift */,
 				BFD934A92C0CCFD600850E4F /* PointAnnotation.swift */,
@@ -300,6 +311,7 @@
 				BF65BF572C08C39400FA9193 /* TimerModel.swift in Sources */,
 				BFD947BF2AED4DAE00BCA3ED /* MapView.swift in Sources */,
 				BF7664F82C0B6C09008A0B1A /* StoreManager.swift in Sources */,
+				BFB8258C2C1A3EC100F95163 /* TipKit.swift in Sources */,
 				BFCAAC852C0F476D004A6B43 /* StartLineDataView.swift in Sources */,
 				BFC9345F2C0B020A0081C025 /* CountdownTime.swift in Sources */,
 				BFD9477F2AED4B5400BCA3ED /* SailingWatchApp.swift in Sources */,
