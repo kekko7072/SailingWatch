@@ -11,22 +11,24 @@ struct MainView: View {
     @AppStorage("firstOpeningTimestamp") var firstOpeningTimestamp: Double?
     
     @ObservedObject var locationManager: LocationManager
-    @ObservedObject var storeManager: StoreManager
+    //@ObservedObject var storeManager: StoreManager
     
     @StateObject private var networkMonitor = NetworkMonitor()
-    @State private var showAlert = false
-    @State private var showStoreSheet = false
+    /*@State private var showAlert = false
+    @State private var showStoreSheet = false*/
     
     var body: some View {
         TabView {
             TimerView(locationManager: locationManager)
             ZStack{
-                if !showAlert{
+                StartLineDataView(locationManager: locationManager)
+
+                /*if !showAlert{
                     StartLineDataView(locationManager: locationManager)
                 } else {
                     StoreView(storeManager: storeManager)
-                }
-            }.alert(isPresented: $showAlert) {
+                }*/
+            }/*.alert(isPresented: $showAlert) {
                 Alert(
                     title: Text("Free Trial"),
                     message: Text("The Line Tracking Feature of the app is free for the first three weeks."),
@@ -35,14 +37,14 @@ struct MainView: View {
                     }),
                     secondaryButton: .default(Text("OK"))
                 )
-            }
+            }*/
             if(locationManager.lineConfigured && networkMonitor.isConnected){
                 StartLineMapView(locationManager: locationManager)
             }
         }
-        .tabViewStyle(PageTabViewStyle()).onAppear(perform: checkForAlert).sheet(isPresented: $showStoreSheet, content: {
+        .tabViewStyle(PageTabViewStyle()).onAppear(perform: checkForAlert)/*.sheet(isPresented: $showStoreSheet, content: {
             StoreView(storeManager: storeManager, showStoreSheet)
-        })
+        })*/
     }
     
     private func checkForAlert() {
@@ -69,5 +71,5 @@ struct MainView: View {
 }
 
 #Preview {
-    MainView(locationManager: LocationManager(), storeManager: StoreManager())
+    MainView(locationManager: LocationManager())//, storeManager: StoreManager())
 }

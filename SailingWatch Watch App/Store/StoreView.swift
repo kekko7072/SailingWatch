@@ -5,6 +5,10 @@
 //  Created by Francesco Vezzani on 01/06/24.
 //
 
+
+/// - MARK: Add InAppPurchase as capabilities
+
+/*
 import SwiftUI
 import StoreKit
 
@@ -98,3 +102,4 @@ struct StoreView: View {
 #Preview {
     StoreView(storeManager: StoreManager())
 }
+*/

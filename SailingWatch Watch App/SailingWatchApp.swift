@@ -29,12 +29,12 @@ struct SailingWatch_Watch_AppApp: App {
         LogManager.shared.logEvent(.appLaunched)
     }
     
-    @StateObject var storeManager = StoreManager()
+    //@StateObject var storeManager = StoreManager()
     @StateObject var locationManager = LocationManager()
     
     var body: some Scene {
         WindowGroup {
-            MainView(locationManager: locationManager, storeManager: storeManager)
+            MainView(locationManager: locationManager)//, storeManager: storeManager)
         }
     }
 }
