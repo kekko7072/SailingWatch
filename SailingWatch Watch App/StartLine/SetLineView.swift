@@ -52,6 +52,9 @@ struct SetLineView: View {
             if locationManager.pointALocation != nil && locationManager.pointBLocation != nil {
                 Button("LINE"){
                     locationManager.lineSet()
+                    
+                    /// Log event - Line configured
+                    LogManager.shared.logEvent(.lineConfigured)
                 }.buttonStyle(.borderedProminent).tint(.green).bold()
             }else {
                 Button("LINE"){

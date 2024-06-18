@@ -28,6 +28,8 @@ struct TimerView: View {
                         Button(action: {
                             timerModel.stop()
                             isStarted = false
+                            /// Log event - Start timer
+                            LogManager.shared.logEvent(.timerFinished, data: ["time" : timerModel.displayTime.0])
                         }) {
                             Text("FINISH").bold().foregroundStyle(.black)
                         }.buttonStyle(.borderedProminent).tint(.red)
@@ -75,6 +77,8 @@ struct TimerView: View {
                     Button(action: {
                         timerModel.start()
                         isStarted = true
+                        /// Log event - Start timer
+                        LogManager.shared.logEvent(.timerStarted, data: ["time" : timerModel.displayTime.0])
                     }) {
                         Text("START").font(.title2).foregroundStyle(.black).bold()
                     }.buttonStyle(.borderedProminent).tint(.green)

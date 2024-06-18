@@ -199,9 +199,13 @@ class TimerModel: NSObject, ObservableObject, HKWorkoutSessionDelegate, HKLiveWo
     private func playAudio(for audioType: AudioType) {
         guard let soundURL = Bundle.main.url(forResource: audioType.rawValue, withExtension: "mp3") else { return }
         do {
+            ///TODO:
+            ///- 1. is the delayed related to creation of AVAudioPlayer or prepareToPlay
+            ///- 2. use play at particular time [BETTER SOLUTION] - and if need to cancel i can destroy the player. Have an ARRAY of AVAudioPlayer for the right timing. https://developer.apple.com/documentation/avfaudio/avaudioplayer/1389324-play
             audioPlayer = try AVAudioPlayer(contentsOf: soundURL)
             audioPlayer?.prepareToPlay()
             audioPlayer?.play()
+            
         } catch {
             // Handle error
         }
@@ -224,6 +228,7 @@ class TimerModel: NSObject, ObservableObject, HKWorkoutSessionDelegate, HKLiveWo
             
             ///Enable water lock
             if(interval.enableWaterLock){
+                ///TODO test if when enabled AVAudioSession it's playing sound. [EXPECT-YES (when diving haptick its played)]
                 WKInterfaceDevice.current().enableWaterLock()
             }
         }
@@ -276,7 +281,7 @@ class TimerModel: NSObject, ObservableObject, HKWorkoutSessionDelegate, HKLiveWo
         
         healthStore.execute(energyBurnedQuery)
     }
-
+    
     private func processCaloriesBurnedSamples(_ samples: [HKSample]?) {
         guard let energyBurnedSamples = samples as? [HKQuantitySample] else { return }
         
@@ -316,7 +321,7 @@ class TimerModel: NSObject, ObservableObject, HKWorkoutSessionDelegate, HKLiveWo
 extension TimerModel: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let newLocation = locations.last else { return }
-
+        
         if let lastLocation = lastLocation {
             let distance = newLocation.distance(from: lastLocation)
             let timeInterval = newLocation.timestamp.timeIntervalSince(lastLocation.timestamp)

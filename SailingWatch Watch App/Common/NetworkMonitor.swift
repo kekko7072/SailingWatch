@@ -9,6 +9,8 @@ import Network
 import Combine
 
 class NetworkMonitor: ObservableObject {
+    static let shared = NetworkMonitor()
+
     private var monitor: NWPathMonitor
     private var queue = DispatchQueue.global(qos: .background)
     @Published var isConnected: Bool = true

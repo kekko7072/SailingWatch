@@ -48,20 +48,23 @@ struct MainView: View {
     private func checkForAlert() {
         guard let firstTimestamp = firstOpeningTimestamp else { return }
         
-        if(!storeManager.activeTransactions.isEmpty){
-            showAlert = false
-        }else{
-            let firstDate = Date(timeIntervalSince1970: firstTimestamp)
-            let currentDate = Date()
-            let calendar = Calendar.current
-            let components = calendar.dateComponents([.weekOfYear], from: firstDate, to: currentDate)
-            
-            if let weeks = components.weekOfYear {
-                if weeks >= 0 && weeks < 3 {
-                    showAlert = true
-                }
-            }
-        }
+        //TODO RENABLE THIS PART
+        
+        /*
+         if(!storeManager.activeTransactions.isEmpty){
+         showAlert = false
+         }else{
+         let firstDate = Date(timeIntervalSince1970: firstTimestamp)
+         let currentDate = Date()
+         let calendar = Calendar.current
+         let components = calendar.dateComponents([.weekOfYear], from: firstDate, to: currentDate)
+         
+         if let weeks = components.weekOfYear {
+         if weeks >= 0 && weeks < 3 {
+         showAlert = true
+         }
+         }
+         }*/
     }
 }
 

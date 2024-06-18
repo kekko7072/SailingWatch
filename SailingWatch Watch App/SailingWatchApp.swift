@@ -18,9 +18,15 @@ struct SailingWatch_Watch_AppApp: App {
     init() {
         if firstOpeningTimestamp == nil {
             firstOpeningTimestamp = Date().timeIntervalSince1970
+            
+            /// Log event - App first open
+            LogManager.shared.logEvent(.appFirstOpen)
         }
-        // Configure Tip's data container
+        /// Configure Tip's data container
         try? Tips.configure()
+        
+        /// Log event - App launched
+        LogManager.shared.logEvent(.appLaunched)
     }
     
     @StateObject var storeManager = StoreManager()
