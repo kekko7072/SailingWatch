@@ -31,7 +31,7 @@ struct TimerView: View {
                             /// Log event - Start timer
                             LogManager.shared.logEvent(.timerFinished, data: ["time" : timerModel.displayTime.0])
                         }) {
-                            Text("FINISH").bold().foregroundStyle(.black)
+                            Text("FINISH").font(.title2).foregroundStyle(.black).bold()
                         }.buttonStyle(.borderedProminent).tint(.red)
                     }else{
                         HStack{

@@ -29,13 +29,7 @@ class LogManager {
     }
     
     func logEvent(_ event: EventType, data: [String: String] = [:]) {
-        let monitor = NetworkMonitor.shared
-        
-        guard monitor.isConnected else {
-            print("No internet connection. Skipping log event.")
-            return
-        }
-        
+
         let url = URL(string: "https://us-central1-sailingwatch-app.cloudfunctions.net/api/log-event")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
