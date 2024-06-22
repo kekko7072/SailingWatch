@@ -9,8 +9,17 @@ import Foundation
 import WatchKit
 
 enum AudioType: String {
+    // MARK: Start sound
+    /// Duration: 5 s
     case start = "start"
+    /// Duration: 0.5 s
+    case startFast = "start_fast"
+    
+    // MARK: Count sound
+    /// Duration: 1 s
     case count = "count"
+    /// Duration: 0.5 s
+    case countFast = "count_fast"
 }
 
 enum FeedbackType {
@@ -25,33 +34,17 @@ class SoundInterval {
     
     init(time: Int, feedback: FeedbackType, enableWaterLock:Bool = false) {
         self.feedback = feedback
-        
-        switch feedback {
-        case .audio:
-            /// This latecny it's necessary to make sure audio it's played at the correct time
-            /// due to latency in audio playing from AVAudio
-            self.time = time + 3
-        case .haptic:
-            self.time = time
-        }
-        
+        self.time = time
         self.enableWaterLock = enableWaterLock
     }
     
     public func toTime() -> TimeInterval {
-        switch self.feedback {
-        case .audio:
-            /// This to remove latency when displaying and sync time
-            return TimeInterval(self.time - 3)
-        case .haptic:
-            return TimeInterval(self.time)
-        }
-        
+        return TimeInterval(self.time)
     }
 }
 
 let soundIntervals: [SoundInterval] = [
-    /// Count Down values
+    // MARK: Count Down values
     SoundInterval(time: 540, feedback: .audio(.count)),
     SoundInterval(time: 480, feedback: .audio(.count)),
     SoundInterval(time: 420, feedback: .audio(.count)),
@@ -60,29 +53,29 @@ let soundIntervals: [SoundInterval] = [
     SoundInterval(time: 240, feedback: .audio(.count)),
     SoundInterval(time: 120, feedback: .audio(.count)),
     SoundInterval(time: 60, feedback: .audio(.count)),
-    SoundInterval(time: 50, feedback: .haptic(.success)),
-    SoundInterval(time: 40, feedback: .haptic(.success)),
-    SoundInterval(time: 30, feedback: .haptic(.success)),
-    SoundInterval(time: 20, feedback: .haptic(.success)),
-    SoundInterval(time: 15, feedback: .haptic(.success)),
-    SoundInterval(time: 10, feedback: .haptic(.success)),
-    SoundInterval(time: 5, feedback: .haptic(.success)),
-    SoundInterval(time: 4, feedback: .haptic(.success)),
-    SoundInterval(time: 3, feedback: .haptic(.success)),
-    SoundInterval(time: 2, feedback: .haptic(.success)),
-    SoundInterval(time: 1, feedback: .haptic(.success)),
-    SoundInterval(time: 0, feedback: .haptic(.failure)),
-    /// Count Up values
-    SoundInterval(time: -1, feedback: .haptic(.failure)),
-    SoundInterval(time: -2, feedback: .haptic(.failure)),
-    SoundInterval(time: -3, feedback: .haptic(.failure)),
-    SoundInterval(time: -4, feedback: .haptic(.failure)),
-    SoundInterval(time: -5, feedback: .haptic(.failure)),
-    SoundInterval(time: -6, feedback: .haptic(.failure)),
-    SoundInterval(time: -7, feedback: .haptic(.failure)),
-    SoundInterval(time: -8, feedback: .haptic(.failure)),
-    SoundInterval(time: -9, feedback: .haptic(.failure)),
-    SoundInterval(time: -10, feedback: .haptic(.failure)),
+    SoundInterval(time: 50, feedback: .audio(.countFast)),
+    SoundInterval(time: 40, feedback: .audio(.countFast)),
+    SoundInterval(time: 30, feedback: .audio(.countFast)),
+    SoundInterval(time: 20, feedback: .audio(.countFast)),
+    SoundInterval(time: 15, feedback: .audio(.countFast)),
+    SoundInterval(time: 10, feedback: .audio(.countFast)),
+    SoundInterval(time: 5, feedback: .audio(.startFast)),
+    SoundInterval(time: 4, feedback: .audio(.startFast)),
+    SoundInterval(time: 3, feedback: .audio(.startFast)),
+    SoundInterval(time: 2, feedback: .audio(.startFast)),
+    SoundInterval(time: 1, feedback: .audio(.startFast)),
+    SoundInterval(time: 0, feedback: .audio(.start)),
+    // MARK: Count Up values
+    SoundInterval(time: -1, feedback: .haptic(.success)),
+    SoundInterval(time: -2, feedback: .haptic(.success)),
+    SoundInterval(time: -3, feedback: .haptic(.success)),
+    SoundInterval(time: -4, feedback: .haptic(.success)),
+    SoundInterval(time: -5, feedback: .haptic(.success)),
+    SoundInterval(time: -6, feedback: .haptic(.success)),
+    SoundInterval(time: -7, feedback: .haptic(.success)),
+    SoundInterval(time: -8, feedback: .haptic(.success)),
+    SoundInterval(time: -9, feedback: .haptic(.success)),
+    SoundInterval(time: -10, feedback: .haptic(.success)),
     SoundInterval(time: -11, feedback: .haptic(.failure)),
     SoundInterval(time: -12, feedback: .haptic(.failure)),
     SoundInterval(time: -13, feedback: .haptic(.failure)),

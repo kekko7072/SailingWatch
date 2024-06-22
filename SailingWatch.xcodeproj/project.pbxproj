@@ -10,14 +10,16 @@
 		BF60D3B72C0B8F4C001834E6 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF60D3B62C0B8F4C001834E6 /* MainView.swift */; };
 		BF65BF552C08C37900FA9193 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF65BF542C08C37900FA9193 /* TimerView.swift */; };
 		BF65BF572C08C39400FA9193 /* TimerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF65BF562C08C39400FA9193 /* TimerModel.swift */; };
-		BF65BF5A2C08CBB300FA9193 /* count.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BF65BF592C08CBB000FA9193 /* count.mp3 */; };
-		BF65BF5C2C08CBB900FA9193 /* start.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BF65BF5B2C08CBB600FA9193 /* start.mp3 */; };
 		BF7664F82C0B6C09008A0B1A /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7664F72C0B6C09008A0B1A /* StoreManager.swift */; };
 		BF7664FB2C0B6C61008A0B1A /* ProductIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7664FA2C0B6C61008A0B1A /* ProductIdentifiers.swift */; };
 		BF7664FD2C0B6D61008A0B1A /* SailingWatch.storekit in Resources */ = {isa = PBXBuildFile; fileRef = BF7664FC2C0B6D61008A0B1A /* SailingWatch.storekit */; };
 		BF7664FF2C0B6E82008A0B1A /* StoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7664FE2C0B6E82008A0B1A /* StoreView.swift */; };
 		BF807C5A2C0BB3FF002F837C /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = BF807C592C0BB3FF002F837C /* Localizable.xcstrings */; };
 		BF8586262C21677C001A8DBD /* LogManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8586252C21677C001A8DBD /* LogManager.swift */; };
+		BF9E02782C27668700D90E71 /* count.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BF9E02772C27668700D90E71 /* count.mp3 */; };
+		BF9E027C2C27686F00D90E71 /* count_fast.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BF9E027B2C27686F00D90E71 /* count_fast.mp3 */; };
+		BF9E02802C276B0A00D90E71 /* start_fast.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BF9E027F2C276B0A00D90E71 /* start_fast.mp3 */; };
+		BF9E02842C276C2900D90E71 /* start.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BF9E02832C276C2900D90E71 /* start.mp3 */; };
 		BFB8258C2C1A3EC100F95163 /* TipKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB8258B2C1A3EC100F95163 /* TipKit.swift */; };
 		BFC9345D2C0AFF1B0081C025 /* SoundInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC9345C2C0AFF1B0081C025 /* SoundInterval.swift */; };
 		BFC9345F2C0B020A0081C025 /* CountdownTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC9345E2C0B020A0081C025 /* CountdownTime.swift */; };
@@ -63,14 +65,16 @@
 		BF65BF542C08C37900FA9193 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		BF65BF562C08C39400FA9193 /* TimerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerModel.swift; sourceTree = "<group>"; };
 		BF65BF582C08C91C00FA9193 /* SailingWatch Watch App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "SailingWatch Watch App.entitlements"; sourceTree = "<group>"; };
-		BF65BF592C08CBB000FA9193 /* count.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = count.mp3; sourceTree = "<group>"; };
-		BF65BF5B2C08CBB600FA9193 /* start.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = start.mp3; sourceTree = "<group>"; };
 		BF7664F72C0B6C09008A0B1A /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
 		BF7664FA2C0B6C61008A0B1A /* ProductIdentifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductIdentifiers.swift; sourceTree = "<group>"; };
 		BF7664FC2C0B6D61008A0B1A /* SailingWatch.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = SailingWatch.storekit; sourceTree = "<group>"; };
 		BF7664FE2C0B6E82008A0B1A /* StoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreView.swift; sourceTree = "<group>"; };
 		BF807C592C0BB3FF002F837C /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		BF8586252C21677C001A8DBD /* LogManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogManager.swift; sourceTree = "<group>"; };
+		BF9E02772C27668700D90E71 /* count.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = count.mp3; sourceTree = "<group>"; };
+		BF9E027B2C27686F00D90E71 /* count_fast.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = count_fast.mp3; sourceTree = "<group>"; };
+		BF9E027F2C276B0A00D90E71 /* start_fast.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = start_fast.mp3; sourceTree = "<group>"; };
+		BF9E02832C276C2900D90E71 /* start.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = start.mp3; sourceTree = "<group>"; };
 		BFB8258B2C1A3EC100F95163 /* TipKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipKit.swift; sourceTree = "<group>"; };
 		BFC9345C2C0AFF1B0081C025 /* SoundInterval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundInterval.swift; sourceTree = "<group>"; };
 		BFC9345E2C0B020A0081C025 /* CountdownTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownTime.swift; sourceTree = "<group>"; };
@@ -161,9 +165,11 @@
 				BF7664FC2C0B6D61008A0B1A /* SailingWatch.storekit */,
 				BF807C592C0BB3FF002F837C /* Localizable.xcstrings */,
 				BFD947A62AED4CC200BCA3ED /* SailingWatch-Watch-App-Info.plist */,
+				BF9E02832C276C2900D90E71 /* start.mp3 */,
+				BF9E027F2C276B0A00D90E71 /* start_fast.mp3 */,
+				BF9E02772C27668700D90E71 /* count.mp3 */,
+				BF9E027B2C27686F00D90E71 /* count_fast.mp3 */,
 				BFD947822AED4B5500BCA3ED /* Assets.xcassets */,
-				BF65BF592C08CBB000FA9193 /* count.mp3 */,
-				BF65BF5B2C08CBB600FA9193 /* start.mp3 */,
 				BFD947C52AED4EA100BCA3ED /* Preview Content */,
 			);
 			path = "SailingWatch Watch App";
@@ -282,12 +288,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF65BF5A2C08CBB300FA9193 /* count.mp3 in Resources */,
-				BF65BF5C2C08CBB900FA9193 /* start.mp3 in Resources */,
 				BF807C5A2C0BB3FF002F837C /* Localizable.xcstrings in Resources */,
 				BF7664FD2C0B6D61008A0B1A /* SailingWatch.storekit in Resources */,
 				BFD947C62AED4EA100BCA3ED /* Preview Content in Resources */,
+				BF9E027C2C27686F00D90E71 /* count_fast.mp3 in Resources */,
+				BF9E02782C27668700D90E71 /* count.mp3 in Resources */,
+				BF9E02842C276C2900D90E71 /* start.mp3 in Resources */,
 				BFD947832AED4B5500BCA3ED /* Assets.xcassets in Resources */,
+				BF9E02802C276B0A00D90E71 /* start_fast.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
