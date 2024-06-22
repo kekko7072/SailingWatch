@@ -199,16 +199,10 @@ class TimerModel: NSObject, ObservableObject, HKWorkoutSessionDelegate, HKLiveWo
     private func playAudio(for audioType: AudioType) {
         guard let soundURL = Bundle.main.url(forResource: audioType.rawValue, withExtension: "mp3") else { return }
         do {
-            ///TODO:
-            ///- 1. is the delayed related to creation of AVAudioPlayer or prepareToPlay
-            ///- 2. use play at particular time [BETTER SOLUTION] - and if need to cancel i can destroy the player. Have an ARRAY of AVAudioPlayer for the right timing. https://developer.apple.com/documentation/avfaudio/avaudioplayer/1389324-play
-            print("TIME: \(Date())")
             audioPlayer = try AVAudioPlayer(contentsOf: soundURL)
             audioPlayer?.volume = 1.0
             audioPlayer?.prepareToPlay()
             audioPlayer?.play()
-            print("TIME: \(Date())")
-            
         } catch {
             // Handle error
         }
