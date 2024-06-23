@@ -56,7 +56,7 @@ struct DAUWidgetView: View {
                 Text("Today")
                     .font(.headline)
                 Spacer()
-                Text("Country: \(entry.locales.count)")
+                Text("Countries: \(entry.locales.count)")
                     .font(.subheadline)
                 Spacer()
                 Text("Sessions: \(entry.sessions)")

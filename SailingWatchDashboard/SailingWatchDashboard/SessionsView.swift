@@ -13,22 +13,27 @@ struct SessionsView: View {
     @State private var errorMessage: String?
     
     var body: some View {
-        NavigationView {
-            VStack {
-                if let errorMessage = errorMessage {
-                    Text(errorMessage)
-                        .foregroundColor(.red)
-                } else {
-                    Text("Session: \(sessions)")
-                        .font(.headline)
-                    ChartView(forLocales: locales, chartType: .pie)
+        VStack {
+            if let errorMessage = errorMessage {
+                Text(errorMessage)
+                    .foregroundColor(.red)
+            } else {
+                Text("Today").font(.title2)
+                HStack{
+                    Spacer()
+                    Text("Countries: \(locales.count)")
+                    Spacer()
+                    Text("Sessions: \(sessions)")
+                    Spacer()
                 }
+                .font(.headline)
+                ChartView(forLocales: locales, chartType: .pie)
             }
-            .padding()
-            .navigationTitle("Sessions")
-            .onAppear {
-                fetchData()
-            }
+        }
+        .padding()
+        .navigationTitle("Sessions")
+        .onAppear {
+            fetchData()
         }
     }
     
