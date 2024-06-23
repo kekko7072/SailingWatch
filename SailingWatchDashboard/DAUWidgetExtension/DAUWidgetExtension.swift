@@ -28,6 +28,7 @@ struct DAUProvider: TimelineProvider {
     func getTimeline(in context: Context, completion: @escaping (Timeline<DAUWidgetEntry>) -> Void) {
         NetworkManager.shared.fetchDAUData { result in
             var entries: [DAUWidgetEntry] = []
+            let currentDate = Date()
             
             switch result {
             case .success(let data):
@@ -40,7 +41,9 @@ struct DAUProvider: TimelineProvider {
                 entries.append(entry)
             }
             
-            let timeline = Timeline(entries: entries, policy: .atEnd)
+            // Create a date 15 minutes in the future
+            let nextUpdateDate = Calendar.current.date(byAdding: .minute, value: 15, to: currentDate)!
+            let timeline = Timeline(entries: entries, policy: .after(nextUpdateDate))
             completion(timeline)
         }
     }
