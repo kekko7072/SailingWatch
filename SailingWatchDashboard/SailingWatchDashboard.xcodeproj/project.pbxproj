@@ -1,0 +1,563 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BF5DA1952C286B4700784621 /* SailingWatchDashboardApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5DA1942C286B4700784621 /* SailingWatchDashboardApp.swift */; };
+		BF5DA1972C286B4700784621 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5DA1962C286B4700784621 /* ContentView.swift */; };
+		BF5DA1992C286B4800784621 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF5DA1982C286B4800784621 /* Assets.xcassets */; };
+		BF5DA19C2C286B4800784621 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF5DA19B2C286B4800784621 /* Preview Assets.xcassets */; };
+		BF5DA1A92C286BE900784621 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF5DA1A82C286BE900784621 /* WidgetKit.framework */; };
+		BF5DA1AB2C286BE900784621 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF5DA1AA2C286BE900784621 /* SwiftUI.framework */; };
+		BF5DA1B22C286BE900784621 /* DAUWidgetExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5DA1B12C286BE900784621 /* DAUWidgetExtension.swift */; };
+		BF5DA1B62C286BEB00784621 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF5DA1B52C286BEB00784621 /* Assets.xcassets */; };
+		BF5DA1BA2C286BEB00784621 /* DAUWidgetExtensionExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = BF5DA1A62C286BE900784621 /* DAUWidgetExtensionExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		BF5DA1C12C286C5100784621 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5DA1C02C286C5100784621 /* NetworkManager.swift */; };
+		BF5DA1C22C286C5100784621 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5DA1C02C286C5100784621 /* NetworkManager.swift */; };
+		BF6A44052C28900E0029EC12 /* DAUResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6A44042C28900E0029EC12 /* DAUResponse.swift */; };
+		BF6A44062C28900E0029EC12 /* DAUResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6A44042C28900E0029EC12 /* DAUResponse.swift */; };
+		BF6A44082C2890240029EC12 /* LogEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6A44072C2890240029EC12 /* LogEvent.swift */; };
+		BF6A44092C2890240029EC12 /* LogEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6A44072C2890240029EC12 /* LogEvent.swift */; };
+		BF6A440B2C2893D20029EC12 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6A440A2C2893D20029EC12 /* ChartView.swift */; };
+		BF6A440C2C2893D20029EC12 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6A440A2C2893D20029EC12 /* ChartView.swift */; };
+		BF6A440E2C2894CD0029EC12 /* LogsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6A440D2C2894CD0029EC12 /* LogsListView.swift */; };
+		BF6A440F2C2894CD0029EC12 /* LogsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6A440D2C2894CD0029EC12 /* LogsListView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BF5DA1B82C286BEB00784621 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BF5DA1892C286B4700784621 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BF5DA1A52C286BE900784621;
+			remoteInfo = DAUWidgetExtensionExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		BF5DA1BB2C286BEB00784621 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				BF5DA1BA2C286BEB00784621 /* DAUWidgetExtensionExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		BF5DA1912C286B4700784621 /* SailingWatchDashboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SailingWatchDashboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF5DA1942C286B4700784621 /* SailingWatchDashboardApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SailingWatchDashboardApp.swift; sourceTree = "<group>"; };
+		BF5DA1962C286B4700784621 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		BF5DA1982C286B4800784621 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BF5DA19B2C286B4800784621 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		BF5DA1A62C286BE900784621 /* DAUWidgetExtensionExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = DAUWidgetExtensionExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF5DA1A82C286BE900784621 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		BF5DA1AA2C286BE900784621 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		BF5DA1B12C286BE900784621 /* DAUWidgetExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DAUWidgetExtension.swift; sourceTree = "<group>"; };
+		BF5DA1B52C286BEB00784621 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BF5DA1B72C286BEB00784621 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF5DA1C02C286C5100784621 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		BF6A44042C28900E0029EC12 /* DAUResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DAUResponse.swift; sourceTree = "<group>"; };
+		BF6A44072C2890240029EC12 /* LogEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogEvent.swift; sourceTree = "<group>"; };
+		BF6A440A2C2893D20029EC12 /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
+		BF6A440D2C2894CD0029EC12 /* LogsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsListView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BF5DA18E2C286B4700784621 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF5DA1A32C286BE900784621 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF5DA1AB2C286BE900784621 /* SwiftUI.framework in Frameworks */,
+				BF5DA1A92C286BE900784621 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BF5DA1882C286B4700784621 = {
+			isa = PBXGroup;
+			children = (
+				BF5DA1BF2C286C4000784621 /* Commons */,
+				BF5DA1932C286B4700784621 /* SailingWatchDashboard */,
+				BF5DA1AC2C286BE900784621 /* DAUWidgetExtension */,
+				BF5DA1A72C286BE900784621 /* Frameworks */,
+				BF5DA1922C286B4700784621 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BF5DA1922C286B4700784621 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BF5DA1912C286B4700784621 /* SailingWatchDashboard.app */,
+				BF5DA1A62C286BE900784621 /* DAUWidgetExtensionExtension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BF5DA1932C286B4700784621 /* SailingWatchDashboard */ = {
+			isa = PBXGroup;
+			children = (
+				BF5DA1942C286B4700784621 /* SailingWatchDashboardApp.swift */,
+				BF5DA1962C286B4700784621 /* ContentView.swift */,
+				BF6A440A2C2893D20029EC12 /* ChartView.swift */,
+				BF6A440D2C2894CD0029EC12 /* LogsListView.swift */,
+				BF5DA1982C286B4800784621 /* Assets.xcassets */,
+				BF5DA19A2C286B4800784621 /* Preview Content */,
+			);
+			path = SailingWatchDashboard;
+			sourceTree = "<group>";
+		};
+		BF5DA19A2C286B4800784621 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				BF5DA19B2C286B4800784621 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		BF5DA1A72C286BE900784621 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BF5DA1A82C286BE900784621 /* WidgetKit.framework */,
+				BF5DA1AA2C286BE900784621 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BF5DA1AC2C286BE900784621 /* DAUWidgetExtension */ = {
+			isa = PBXGroup;
+			children = (
+				BF5DA1B12C286BE900784621 /* DAUWidgetExtension.swift */,
+				BF5DA1B52C286BEB00784621 /* Assets.xcassets */,
+				BF5DA1B72C286BEB00784621 /* Info.plist */,
+			);
+			path = DAUWidgetExtension;
+			sourceTree = "<group>";
+		};
+		BF5DA1BF2C286C4000784621 /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+				BF6A44042C28900E0029EC12 /* DAUResponse.swift */,
+				BF6A44072C2890240029EC12 /* LogEvent.swift */,
+				BF5DA1C02C286C5100784621 /* NetworkManager.swift */,
+			);
+			path = Commons;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BF5DA1902C286B4700784621 /* SailingWatchDashboard */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BF5DA19F2C286B4800784621 /* Build configuration list for PBXNativeTarget "SailingWatchDashboard" */;
+			buildPhases = (
+				BF5DA18D2C286B4700784621 /* Sources */,
+				BF5DA18E2C286B4700784621 /* Frameworks */,
+				BF5DA18F2C286B4700784621 /* Resources */,
+				BF5DA1BB2C286BEB00784621 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BF5DA1B92C286BEB00784621 /* PBXTargetDependency */,
+			);
+			name = SailingWatchDashboard;
+			productName = SailingWatchDashboard;
+			productReference = BF5DA1912C286B4700784621 /* SailingWatchDashboard.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BF5DA1A52C286BE900784621 /* DAUWidgetExtensionExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BF5DA1BE2C286BEB00784621 /* Build configuration list for PBXNativeTarget "DAUWidgetExtensionExtension" */;
+			buildPhases = (
+				BF5DA1A22C286BE900784621 /* Sources */,
+				BF5DA1A32C286BE900784621 /* Frameworks */,
+				BF5DA1A42C286BE900784621 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DAUWidgetExtensionExtension;
+			productName = DAUWidgetExtensionExtension;
+			productReference = BF5DA1A62C286BE900784621 /* DAUWidgetExtensionExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BF5DA1892C286B4700784621 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					BF5DA1902C286B4700784621 = {
+						CreatedOnToolsVersion = 15.4;
+					};
+					BF5DA1A52C286BE900784621 = {
+						CreatedOnToolsVersion = 15.4;
+					};
+				};
+			};
+			buildConfigurationList = BF5DA18C2C286B4700784621 /* Build configuration list for PBXProject "SailingWatchDashboard" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BF5DA1882C286B4700784621;
+			productRefGroup = BF5DA1922C286B4700784621 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BF5DA1902C286B4700784621 /* SailingWatchDashboard */,
+				BF5DA1A52C286BE900784621 /* DAUWidgetExtensionExtension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BF5DA18F2C286B4700784621 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF5DA19C2C286B4800784621 /* Preview Assets.xcassets in Resources */,
+				BF5DA1992C286B4800784621 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF5DA1A42C286BE900784621 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF5DA1B62C286BEB00784621 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BF5DA18D2C286B4700784621 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF6A440B2C2893D20029EC12 /* ChartView.swift in Sources */,
+				BF5DA1C12C286C5100784621 /* NetworkManager.swift in Sources */,
+				BF6A44062C28900E0029EC12 /* DAUResponse.swift in Sources */,
+				BF5DA1972C286B4700784621 /* ContentView.swift in Sources */,
+				BF6A440E2C2894CD0029EC12 /* LogsListView.swift in Sources */,
+				BF6A44082C2890240029EC12 /* LogEvent.swift in Sources */,
+				BF5DA1952C286B4700784621 /* SailingWatchDashboardApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF5DA1A22C286BE900784621 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF6A44052C28900E0029EC12 /* DAUResponse.swift in Sources */,
+				BF6A440C2C2893D20029EC12 /* ChartView.swift in Sources */,
+				BF6A44092C2890240029EC12 /* LogEvent.swift in Sources */,
+				BF5DA1C22C286C5100784621 /* NetworkManager.swift in Sources */,
+				BF5DA1B22C286BE900784621 /* DAUWidgetExtension.swift in Sources */,
+				BF6A440F2C2894CD0029EC12 /* LogsListView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BF5DA1B92C286BEB00784621 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BF5DA1A52C286BE900784621 /* DAUWidgetExtensionExtension */;
+			targetProxy = BF5DA1B82C286BEB00784621 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		BF5DA19D2C286B4800784621 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BF5DA19E2C286B4800784621 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BF5DA1A02C286B4800784621 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"SailingWatchDashboard/Preview Content\"";
+				DEVELOPMENT_TEAM = P8WULW25UZ;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = francesco.vezzani.SailingWatchDashboard;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BF5DA1A12C286B4800784621 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"SailingWatchDashboard/Preview Content\"";
+				DEVELOPMENT_TEAM = P8WULW25UZ;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = francesco.vezzani.SailingWatchDashboard;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		BF5DA1BC2C286BEB00784621 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = P8WULW25UZ;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DAUWidgetExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = DAUWidgetExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = francesco.vezzani.SailingWatchDashboard.DAUWidgetExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BF5DA1BD2C286BEB00784621 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = P8WULW25UZ;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DAUWidgetExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = DAUWidgetExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = francesco.vezzani.SailingWatchDashboard.DAUWidgetExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BF5DA18C2C286B4700784621 /* Build configuration list for PBXProject "SailingWatchDashboard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF5DA19D2C286B4800784621 /* Debug */,
+				BF5DA19E2C286B4800784621 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BF5DA19F2C286B4800784621 /* Build configuration list for PBXNativeTarget "SailingWatchDashboard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF5DA1A02C286B4800784621 /* Debug */,
+				BF5DA1A12C286B4800784621 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BF5DA1BE2C286BEB00784621 /* Build configuration list for PBXNativeTarget "DAUWidgetExtensionExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF5DA1BC2C286BEB00784621 /* Debug */,
+				BF5DA1BD2C286BEB00784621 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BF5DA1892C286B4700784621 /* Project object */;
+}

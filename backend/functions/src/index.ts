@@ -4,7 +4,9 @@ import * as admin from "firebase-admin";
 import * as express from "express";
 import * as bodyParser from "body-parser";
 import {Timestamp} from "firebase-admin/firestore";
-import {isOlderThanSixMonths} from "./helpers";
+import {isLastTwentiFowHours, isOlderThanSixMonths} from "./helpers";
+import {LogEvent} from "./commons/log_event";
+import {DAUResponse} from "./commons/dau_response";
 
 admin.initializeApp();
 const db = admin.firestore();
@@ -14,21 +16,13 @@ app.use(bodyParser.json());
 
 export const sessionCollection = db.collection("sessions");
 
-interface LogEvent {
-  sessionId: string;
-  event: string;
-  timestamp: Timestamp;
-  data: any;
-  deviceLocalization: string;
-}
-
 // API endpoint to log events
 app.post("/log-event", async (req, res) => {
   const log: LogEvent = {
     sessionId: req.body.sessionId,
     event: req.body.event,
     timestamp: Timestamp.now(),
-    data: req.body.data,
+    // data: req.body.data,
     deviceLocalization: req.body.deviceLocalization,
   };
 
@@ -49,6 +43,58 @@ app.post("/log-event", async (req, res) => {
   } catch (error) {
     console.error("Error logging event:", error);
     res.status(500).send("Failed to log event");
+  }
+});
+
+// API endpoint to get DAU (Daily Active Users)
+app.get("/dau", async (req, res) => {
+  try {
+    const snapshot = await sessionCollection.get();
+    const dauSnapshot = snapshot.docs.filter((doc) => {
+      const data = doc.data();
+      const timestamp = data.lastEvent as Timestamp;
+      return isLastTwentiFowHours(timestamp);
+    });
+
+    /**
+     * Get the count of sessions per locale
+     */
+    const locales: { [key: string]: number } = {};
+    dauSnapshot.forEach((doc) => {
+      const data = doc.data();
+      const locale = data.deviceLocalization;
+
+      if (locale in locales) {
+        locales[locale]++;
+      } else {
+        locales[locale] = 1;
+      }
+    });
+
+    /**
+     * Get all the logs from the DAU snapshot
+     */
+    const logs = new Set<LogEvent>();
+    await Promise.all(
+      dauSnapshot.map(async (doc) => {
+        const logsSnapshot = await sessionCollection
+          .doc(doc.id)
+          .collection("logs")
+          .get();
+        logsSnapshot.forEach((log) => logs.add(log.data() as LogEvent));
+      })
+    );
+
+    const dauData: DAUResponse = {
+      sessions: dauSnapshot.length,
+      locales: locales,
+      logs: Array.from(logs),
+    };
+
+    res.status(200).json(dauData);
+  } catch (error) {
+    console.error("Error retrieving DAU:", error);
+    res.status(500).send("Failed to retrieve DAU");
   }
 });
 

@@ -6,3 +6,9 @@ export const isOlderThanSixMonths = (timestamp: Timestamp): boolean => {
   const now = Date.now();
   return now - timestamp.toMillis() > sixMonthsInMillis;
 };
+
+export const isLastTwentiFowHours = (timestamp: Timestamp): boolean => {
+  const twentyFourHoursInMillis = 24 * 60 * 60 * 1000;
+  const now = Date.now();
+  return now - timestamp.toMillis() < twentyFourHoursInMillis;
+};
