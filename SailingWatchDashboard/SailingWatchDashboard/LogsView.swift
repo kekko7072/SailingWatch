@@ -39,7 +39,9 @@ struct LogsView: View {
             DispatchQueue.main.async {
                 switch result {
                 case .success(let data):
-                    self.logs = data.logs
+                    self.logs = data.logs.sorted(by: { a, b in
+                        a.timestamp._seconds > b.timestamp._seconds
+                    })
                 case .failure(let error):
                     self.errorMessage = "Error fetching data: \(error.localizedDescription)"
                 }
