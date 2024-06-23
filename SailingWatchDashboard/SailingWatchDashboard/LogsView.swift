@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  LogsListView.swift
 //  SailingWatchDashboard
 //
 //  Created by Francesco Vezzani on 23/06/24.
@@ -7,11 +7,9 @@
 
 import SwiftUI
 
-struct ContentView: View {
-    @State private var sessions: Int = 0
-    @State private var locales: [String: Int] = [:]
-    @State private var logs: [LogEvent] = []
+struct LogsView: View {
     @State private var errorMessage: String?
+    @State private var logs: [LogEvent] = []
     
     var body: some View {
         NavigationView {
@@ -20,19 +18,18 @@ struct ContentView: View {
                     Text(errorMessage)
                         .foregroundColor(.red)
                 } else {
-                    Text("Session: \(sessions)")
-                        .font(.headline)
-                    ChartView(forLocales: locales, chartType: .pie)
-                    NavigationLink(destination: LogsListView(logEvents: logs)) {
-                        Text("View All Logs")
-                            .padding()
-                            .background(Color.blue)
-                            .foregroundColor(.white)
-                            .cornerRadius(8)
+                    List(logs) { logEvent in
+                        VStack(alignment: .leading) {
+                            Text("Session ID: \(logEvent.sessionId)")
+                                .font(.headline)
+                            Text("Event: \(logEvent.event)")
+                            Text("Timestamp: \(printTimestamp(logEvent.timestamp))")
+                            Text("Device Localization: \(logEvent.deviceLocalization)")
+                        }
+                        .padding()
                     }
                 }
-            }.navigationTitle("Dashboard")
-                .padding()
+            }.navigationTitle("Logs")
                 .onAppear {
                     fetchData()
                 }
@@ -44,8 +41,6 @@ struct ContentView: View {
             DispatchQueue.main.async {
                 switch result {
                 case .success(let data):
-                    self.sessions = data.sessions
-                    self.locales = data.locales
                     self.logs = data.logs
                 case .failure(let error):
                     self.errorMessage = "Error fetching data: \(error.localizedDescription)"
@@ -55,6 +50,7 @@ struct ContentView: View {
     }
 }
 
+
 #Preview {
-    ContentView()
+    LogsView()
 }

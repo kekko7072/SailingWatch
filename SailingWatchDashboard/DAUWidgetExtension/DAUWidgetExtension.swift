@@ -51,7 +51,7 @@ struct DAUWidgetView: View {
     
     var body: some View {
         VStack {
-            Text("Sessions: \(entry.sessions)")
+            Text("Today Sessions: \(entry.sessions)")
                 .font(.headline)
             
             ChartView(forLocales: entry.locales, chartType: .horizontalBar)

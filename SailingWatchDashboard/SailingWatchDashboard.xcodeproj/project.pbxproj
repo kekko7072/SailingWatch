@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BF5DA1952C286B4700784621 /* SailingWatchDashboardApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5DA1942C286B4700784621 /* SailingWatchDashboardApp.swift */; };
-		BF5DA1972C286B4700784621 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5DA1962C286B4700784621 /* ContentView.swift */; };
+		BF5DA1972C286B4700784621 /* SessionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5DA1962C286B4700784621 /* SessionsView.swift */; };
 		BF5DA1992C286B4800784621 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF5DA1982C286B4800784621 /* Assets.xcassets */; };
 		BF5DA19C2C286B4800784621 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF5DA19B2C286B4800784621 /* Preview Assets.xcassets */; };
 		BF5DA1A92C286BE900784621 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF5DA1A82C286BE900784621 /* WidgetKit.framework */; };
@@ -24,8 +24,8 @@
 		BF6A44092C2890240029EC12 /* LogEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6A44072C2890240029EC12 /* LogEvent.swift */; };
 		BF6A440B2C2893D20029EC12 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6A440A2C2893D20029EC12 /* ChartView.swift */; };
 		BF6A440C2C2893D20029EC12 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6A440A2C2893D20029EC12 /* ChartView.swift */; };
-		BF6A440E2C2894CD0029EC12 /* LogsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6A440D2C2894CD0029EC12 /* LogsListView.swift */; };
-		BF6A440F2C2894CD0029EC12 /* LogsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6A440D2C2894CD0029EC12 /* LogsListView.swift */; };
+		BF6A440E2C2894CD0029EC12 /* LogsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6A440D2C2894CD0029EC12 /* LogsView.swift */; };
+		BF6A440F2C2894CD0029EC12 /* LogsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6A440D2C2894CD0029EC12 /* LogsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,7 +55,7 @@
 /* Begin PBXFileReference section */
 		BF5DA1912C286B4700784621 /* SailingWatchDashboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SailingWatchDashboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF5DA1942C286B4700784621 /* SailingWatchDashboardApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SailingWatchDashboardApp.swift; sourceTree = "<group>"; };
-		BF5DA1962C286B4700784621 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		BF5DA1962C286B4700784621 /* SessionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionsView.swift; sourceTree = "<group>"; };
 		BF5DA1982C286B4800784621 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BF5DA19B2C286B4800784621 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BF5DA1A62C286BE900784621 /* DAUWidgetExtensionExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = DAUWidgetExtensionExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -68,7 +68,7 @@
 		BF6A44042C28900E0029EC12 /* DAUResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DAUResponse.swift; sourceTree = "<group>"; };
 		BF6A44072C2890240029EC12 /* LogEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogEvent.swift; sourceTree = "<group>"; };
 		BF6A440A2C2893D20029EC12 /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
-		BF6A440D2C2894CD0029EC12 /* LogsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsListView.swift; sourceTree = "<group>"; };
+		BF6A440D2C2894CD0029EC12 /* LogsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,9 +115,8 @@
 			isa = PBXGroup;
 			children = (
 				BF5DA1942C286B4700784621 /* SailingWatchDashboardApp.swift */,
-				BF5DA1962C286B4700784621 /* ContentView.swift */,
-				BF6A440A2C2893D20029EC12 /* ChartView.swift */,
-				BF6A440D2C2894CD0029EC12 /* LogsListView.swift */,
+				BF5DA1962C286B4700784621 /* SessionsView.swift */,
+				BF6A440D2C2894CD0029EC12 /* LogsView.swift */,
 				BF5DA1982C286B4800784621 /* Assets.xcassets */,
 				BF5DA19A2C286B4800784621 /* Preview Content */,
 			);
@@ -157,6 +156,7 @@
 				BF6A44042C28900E0029EC12 /* DAUResponse.swift */,
 				BF6A44072C2890240029EC12 /* LogEvent.swift */,
 				BF5DA1C02C286C5100784621 /* NetworkManager.swift */,
+				BF6A440A2C2893D20029EC12 /* ChartView.swift */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -265,8 +265,8 @@
 				BF6A440B2C2893D20029EC12 /* ChartView.swift in Sources */,
 				BF5DA1C12C286C5100784621 /* NetworkManager.swift in Sources */,
 				BF6A44062C28900E0029EC12 /* DAUResponse.swift in Sources */,
-				BF5DA1972C286B4700784621 /* ContentView.swift in Sources */,
-				BF6A440E2C2894CD0029EC12 /* LogsListView.swift in Sources */,
+				BF5DA1972C286B4700784621 /* SessionsView.swift in Sources */,
+				BF6A440E2C2894CD0029EC12 /* LogsView.swift in Sources */,
 				BF6A44082C2890240029EC12 /* LogEvent.swift in Sources */,
 				BF5DA1952C286B4700784621 /* SailingWatchDashboardApp.swift in Sources */,
 			);
@@ -281,7 +281,7 @@
 				BF6A44092C2890240029EC12 /* LogEvent.swift in Sources */,
 				BF5DA1C22C286C5100784621 /* NetworkManager.swift in Sources */,
 				BF5DA1B22C286BE900784621 /* DAUWidgetExtension.swift in Sources */,
-				BF6A440F2C2894CD0029EC12 /* LogsListView.swift in Sources */,
+				BF6A440F2C2894CD0029EC12 /* LogsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

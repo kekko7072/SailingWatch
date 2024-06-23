@@ -10,8 +10,26 @@ import SwiftUI
 @main
 struct SailingWatchDashboardApp: App {
     var body: some Scene {
-        WindowGroup {
-            ContentView()
+        WindowGroup {TabView{
+            NavigationView{
+                SessionsView()
+            }.tabItem {
+                Label {
+                    Text("Sessions")
+                } icon: {
+                    Image(systemName:"chart.pie")
+                }
+            }
+            NavigationView{
+                LogsView()
+            }.tabItem {
+                Label {
+                    Text("Logs")
+                } icon: {
+                    Image(systemName: "list.bullet.rectangle")
+                }
+            }
+        }
         }
     }
 }
