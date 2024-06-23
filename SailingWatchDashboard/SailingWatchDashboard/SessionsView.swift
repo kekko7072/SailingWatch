@@ -23,10 +23,12 @@ struct SessionsView: View {
                         .font(.headline)
                     ChartView(forLocales: locales, chartType: .pie)
                 }
-            }.navigationTitle("Sessions")
-                .onAppear {
-                    fetchData()
-                }
+            }
+            .padding()
+            .navigationTitle("Sessions")
+            .onAppear {
+                fetchData()
+            }
         }
     }
     

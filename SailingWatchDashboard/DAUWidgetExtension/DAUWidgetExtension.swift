@@ -50,11 +50,21 @@ struct DAUWidgetView: View {
     var entry: DAUProvider.Entry
     
     var body: some View {
-        VStack {
-            Text("Today Sessions: \(entry.sessions)")
-                .font(.headline)
-            
+        HStack {
             ChartView(forLocales: entry.locales, chartType: .horizontalBar)
+            VStack{
+                Text("Today")
+                    .font(.headline)
+                Spacer()
+                Text("Country: \(entry.locales.count)")
+                    .font(.subheadline)
+                Spacer()
+                Text("Sessions: \(entry.sessions)")
+                    .font(.subheadline)
+                Spacer()
+                Text("Logs: \(entry.logs.count)")
+                    .font(.subheadline)
+            }
         }.widgetBackground(Color.clear)
     }
 }

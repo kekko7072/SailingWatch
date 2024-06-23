@@ -12,7 +12,6 @@ struct LogsView: View {
     @State private var logs: [LogEvent] = []
     
     var body: some View {
-        NavigationView {
             VStack {
                 if let errorMessage = errorMessage {
                     Text(errorMessage)
@@ -27,13 +26,12 @@ struct LogsView: View {
                             Text("Device Localization: \(logEvent.deviceLocalization)")
                         }
                         .padding()
-                    }
+                    }.navigationTitle("Logs")
                 }
-            }.navigationTitle("Logs")
+            }
                 .onAppear {
                     fetchData()
                 }
-        }
     }
     
     private func fetchData() {
