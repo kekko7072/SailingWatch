@@ -62,17 +62,17 @@ struct TimerView: View {
                         }.foregroundStyle(.black).font(.title2).bold()
                     }
                 }else{
-                    Picker(selection: $selectedDuration, label: EmptyView()) {
+                    Picker("picker", selection: $selectedDuration) {
                         ForEach(CountdownTime.allCases, id: \.self) { duration in
                             let isSelected = selectedDuration == duration
                             Text(duration.displayString).font(isSelected ? .largeTitle : .title2).tag(duration).foregroundStyle(isSelected ? .green : .white).fontWeight(isSelected ? .bold :.regular)
                         }
-                    }
-                    .onChange(of: selectedDuration) { oldValue, newValue in
-                        timerModel.countdownDuration = newValue.rawValue
-                        timerModel.displayTime = timerModel.formatTime(newValue.rawValue)
-                    }
-                    .padding()
+                    }.labelsHidden()
+                        .onChange(of: selectedDuration) { oldValue, newValue in
+                            timerModel.countdownDuration = newValue.rawValue
+                            timerModel.displayTime = timerModel.formatTime(newValue.rawValue)
+                        }
+                        .padding()
                     
                     Button(action: {
                         timerModel.start()

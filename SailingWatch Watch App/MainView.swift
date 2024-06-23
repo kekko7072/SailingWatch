@@ -48,11 +48,12 @@ struct MainView: View {
     }
     
     private func checkForAlert() {
-        guard let firstTimestamp = firstOpeningTimestamp else { return }
-        
         //TODO RENABLE THIS PART
+        /* guard let firstTimestamp = firstOpeningTimestamp else { return }
         
-        /*
+       
+        
+      
          if(!storeManager.activeTransactions.isEmpty){
          showAlert = false
          }else{
