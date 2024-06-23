@@ -27,6 +27,6 @@ struct Timestamp: Decodable {
 func printTimestamp(_ time: Timestamp) -> String {
     let date = Date(timeIntervalSince1970: TimeInterval(time._seconds))
     let dateFormatter = DateFormatter()
-    dateFormatter.dateFormat = "dd/MM/yyyy"
+    dateFormatter.dateFormat = "hh:mm dd/MM/yyyy"
     return dateFormatter.string(from: date)
 }
