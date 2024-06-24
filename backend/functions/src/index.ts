@@ -4,7 +4,7 @@ import * as admin from "firebase-admin";
 import * as express from "express";
 import * as bodyParser from "body-parser";
 import {Timestamp} from "firebase-admin/firestore";
-import {isLastTwentiFowHours, isOlderThanSixMonths} from "./helpers";
+import {isOlderThanSixMonths, today} from "./commons/helpers";
 import {LogEvent} from "./commons/log_event";
 import {DAUResponse} from "./commons/dau_response";
 
@@ -49,13 +49,11 @@ app.post("/log-event", async (req, res) => {
 // API endpoint to get DAU (Daily Active Users)
 app.get("/dau", async (req, res) => {
   try {
-    const snapshot = await sessionCollection.get();
-    const dauSnapshot = snapshot.docs.filter((doc) => {
-      const data = doc.data();
-      const timestamp = data.lastEvent as Timestamp;
-      return isLastTwentiFowHours(timestamp);
-    });
+    const snapshot = await sessionCollection
+      .where("timestamp", ">", today())
+      .get();
 
+    const dauSnapshot = snapshot.docs;
     /**
      * Get the count of sessions per locale
      */
