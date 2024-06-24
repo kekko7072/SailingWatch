@@ -50,7 +50,7 @@ app.post("/log-event", async (req, res) => {
 app.get("/dau", async (req, res) => {
   try {
     const snapshot = await sessionCollection
-      .where("timestamp", ">", today())
+      .where("lastEvent", ">", today())
       .get();
 
     const dauSnapshot = snapshot.docs;
